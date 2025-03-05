@@ -30,7 +30,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
-      # - uses: pnpm/action-setup@v3 # 如果使用 pnpm，请取消此区域注释
+      - uses: pnpm/action-setup@v3 # 如果使用 pnpm，请取消此区域注释
       #   with:
       #     version: 9
       # - uses: oven-sh/setup-bun@v1 # 如果使用 Bun，请取消注释
@@ -38,15 +38,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm # 或 pnpm / yarn
+          cache: pnpm # npm / pnpm / yarn
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Install dependencies
-      # 或 pnpm install / yarn install / bun install
-        run: npm ci
+      # npm ci / pnpm install / yarn install / bun install
+        run: pnpm install
       - name: Build with VitePress
-      # 或 pnpm docs:build / yarn docs:build / bun run docs:build
-        run: npm run github:pages:build
+      # npm run build / pnpm build / yarn build / bun run build
+        run: pnpm run github:pages:build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
