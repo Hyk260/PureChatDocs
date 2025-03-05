@@ -14,11 +14,16 @@
   "scripts": {
     "dev": "vitepress",
     "build": "vitepress build",
-    "serve": "vitepress serve"
+    "serve": "vitepress serve",
+    "github:pages:dev": "cross-env VITE_BASE_URL=/PureChatDocs/ vitepress",
+    "github:pages:build": "cross-env VITE_BASE_URL=/PureChatDocs/ vitepress build",
+    "github:pages:serve": "cross-env VITE_BASE_URL=/PureChatDocs/ vitepress serve",
+    "clean": "rimraf docs"
   },
   "dependencies": {
     "cross-env": "^7.0.3",
-    "medium-zoom": "^1.1.0"
+    "medium-zoom": "^1.1.0",
+    "rimraf": "^6.0.1"
   },
   "keywords": [
     "openai",
