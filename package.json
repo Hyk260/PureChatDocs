@@ -33,6 +33,7 @@
     "vue",
     "vitepress"
   ],
+  "packageManager": "pnpm@9.7.1",
   "license": "MIT",
   "homepage": "https://github.com/Hyk260/PureChatDocs"
 }
