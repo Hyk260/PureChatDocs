@@ -3,6 +3,10 @@
 > PureChat 是一款基于 Vue3 + ElementPlus，结合 AI 和前沿技术的聊天应用，内置OpenAI，Ollama，DeepSeek等大预言模型，支持 Markdown 渲染，聊天记录生成截图，主题切换，助力开发者快速掌握现代技术。
 - 体验链接：[网页版](https://purechat.cn)
 
+关注社交账号 获取最新动态: [公众号](http://mmbiz.qpic.cn/sz_mmbiz_jpg/jfyEomMz9MYlSVaNrB0yfPKcGm2OmPfCZiaHR9r1Zo0YzSro1T8MonB6OpkcGiamhHD5Sv0LPLYWS2HdaeUamDqQ/0)
+
+加入社群 [QQ群(194541068)](https://jq.qq.com/?_wv=1027&k=Cd4Ihd2J)
+
 ## 特性
 [README](https://github.com/Hyk260/PureChat/blob/main/README.md)
 

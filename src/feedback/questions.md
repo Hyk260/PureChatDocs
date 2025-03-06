@@ -13,9 +13,23 @@
 
 2. 请提供问题的背景信息和碰到问题的详细描述，高质量的提问容易获得有用的答案。
 3. 在PureChat官方交流群里面提问，请尽量描述清楚问题，以便大家更好的帮助你。 [加群](https://jq.qq.com/?_wv=1027&k=Cd4Ihd2J)
+<!-- 4. [QQ群194541068](https://jq.qq.com/?_wv=1027&k=Cd4Ihd2J) -->
 
 ## VScode (因为在此系统上禁止运行脚本)报错
 [第一次执行脚本报错](https://cloud.tencent.com/developer/article/1746884)
+
+## 客户端控制台报错查看方法
+- 点击PureChat客户端窗口后按下快捷键Ctrl+Shift+I（Mac端：Command+Option+I）
+::: tip
+- 当前活动窗口必须为PureChat的客户端窗口才能调出控制台;
+
+- 需要先打开控制台，再点击测试或者发起对话等请求才能收集到请求信息。
+:::
+- 在弹出的控制台窗口中点击`Network` → 点击查看②处最后一个标有红色`×` 的`completions`或`generations` → 点击Response查看完整的返回内容（图中④的区域）。
+
+> 如果你无法判断该错误的原因,请将该界面截图发送到官方交流群中寻求帮助。
+
+<img src="/Network.png">
 
 ## 如何获取腾讯im appid 和 appkey？
 
