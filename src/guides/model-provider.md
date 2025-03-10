@@ -67,7 +67,7 @@ API Key 是使用 PureChat 进行大语言模型会话的必要信息，本节�
 
 [DeepSeek](https://www.deepseek.com) 是一款先进的开源大型语言模型（LLM）。最新版本 DeepSeek-V2 在架构和性能上进行了显著优化，同时训练成本降低了 42.5%, 推理成本降低了 93.3%。
 - 类型：必选
-- 描述：这是你在 DeepSeek AI 服务中申请的 API 密钥
+- 描述：这是你在 DeepSeek AI 服务中申请的 API 密钥 可以前往 [这里](https://platform.deepseek.com/api_keys) 查看
 - 默认值：-
 - 示例：`sk-xxxxxx...xxxxxx`
 
