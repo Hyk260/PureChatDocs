@@ -27,6 +27,10 @@ git clone https://gitee.com/H260788/PureChat.git
   最新版本的代码以GitHub为准
 </Callout>
 
+<Callout type='tip'>
+  main 分支为web端代码，electron 分支为桌面端代码
+</Callout>
+
 #### 安装依赖
 
 ::: code-group
