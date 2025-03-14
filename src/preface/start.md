@@ -9,6 +9,10 @@ Vite 需要 [Node.js](https://nodejs.org/en/) 版本 18+ 或 20+。然而，有�
  - pnpm >= 8.7.0，推荐最新版本。
 :::
 
+::: tip electron 本地开发注意
+  - Node.js 版本 22.14.0+
+:::
+
 ## 拉取代码
 
 ::: code-group

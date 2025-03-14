@@ -61,7 +61,7 @@ API Key 是使用 PureChat 进行大语言模型会话的必要信息，本节�
   `api.openai.com` 域名，那么你就要自己加上 `/v1` 这个 url。
 </Callout>
 
-## DeepSeek
+## DeepSeek (深度求索)
 
 ### `VITE_DEEPSEEK_API_KEY`
 
