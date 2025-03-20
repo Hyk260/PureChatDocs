@@ -6,7 +6,7 @@
 
 ### 准备好你的 im appid 和 appkey
 
-[如何获取腾讯im appid 和 appkey](/other/FAQ.html#如何获取腾讯im-appid-和-appkey)
+[如何获取腾讯im appid 和 appkey](/feedback/questions.html#如何获取腾讯im-appid-和-appkey)
 
 ### 点击下方按钮进行部署
 

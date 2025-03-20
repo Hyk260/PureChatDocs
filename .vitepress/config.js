@@ -79,6 +79,7 @@ const Sidebar = [
   {
     text: "AI指南",
     items: [
+      { text: "OpenAI 相关问题", link: "/guides/openai" },
       { text: "大语言模型指南", link: "/guides/model" },
       { text: "提示词指南", link: "/guides/prompts" },
       { text: "模型服务商", link: "/guides/model-provider" },

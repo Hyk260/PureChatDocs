@@ -1,4 +1,8 @@
 <script setup>
+defineOptions({
+  name: "LinkGrid",
+})
+
 const props = defineProps({
   items: {
     type: Object,
