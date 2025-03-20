@@ -86,7 +86,7 @@ pnpm run app:builder:mac
 :::
 
 ## 后端代码 
-基于 Node.js 的 API 服务，[项目地址](https://github.com/Hyk260/pure-backend)
+基于 Node.js 的 API 服务，[项目地址](https://github.com/Hyk260/PureChatApi)
 
 ## VSCode插件
 
