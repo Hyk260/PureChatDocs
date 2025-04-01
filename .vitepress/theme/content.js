@@ -18,10 +18,15 @@ export const integrations = [
     link: "https://www.electronjs.org/zh",
     icon: "skill-icons--electron",
   },
+  // {
+  //   name: "Tailwindcss",
+  //   link: "https://www.tailwindcss.cn",
+  //   icon: "logos--tailwindcss-icon",
+  // },
   {
-    name: "Tailwindcss",
-    link: "https://www.tailwindcss.cn",
-    icon: "logos--tailwindcss-icon",
+    name: "UnoCSS",
+    link: "https://unocss.dev",
+    icon: "vscode-icons--file-type-unocss",
   },
   {
     name: "vscode",

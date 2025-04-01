@@ -7,7 +7,7 @@ titleTemplate: docs
 hero:
   name: PureChat
   text: 聊天应用与AI开发框架
-  tagline: 基于 Vue3， Vite5构建
+  tagline: 基于 Vue3， Vite5，Electron构建
   image:
     src: https://ljx-1307934606.cos.ap-beijing.myqcloud.com/log.png
     alt: PureChat

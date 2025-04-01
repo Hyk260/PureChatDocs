@@ -12,7 +12,7 @@
 
 ## 分支
 - main为主分支 基于`Vite5`构建
-- master分支基于`Vue CLI5`构建（不再维护）
+<!-- - master分支基于`Vue CLI5`构建（不再维护） -->
 - electron分支基于main开发使用`electron-vite`构建
 
 ## 技术架构

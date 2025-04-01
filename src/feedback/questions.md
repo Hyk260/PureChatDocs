@@ -31,7 +31,7 @@
 
 <img src="/Network.png">
 
-## 打包后刷新，页面404
+## web打包后刷新，页面404
 
 **问题背景**
 
@@ -144,8 +144,17 @@ ignore-workspace-root-check=true
 
 <img src="/images/im-2.png">
 
-## 如何不使用im sdk?
-开启本地模式不使用腾讯IM SDK，在 `.env` 文件中[设置](https://github.com/Hyk260/PureChat/blob/main/.env#L8) `VITE_LOCAL_MODE=Y` 即可。开启后不支持多端消息同步，做为本地ai问答工具使用。
+## 如何使用腾讯im sdk?
+在 `.env` 文件中[配置](https://github.com/Hyk260/PureChat/blob/main/.env#L8) `VITE_LOCAL_MODE=Y` 即可启用腾讯云sdk模式（默认为N）
+| 特性                | 本地模式         | 腾讯云 SDK 模式       |
+|--------------------|------------------|---------------------|
+| 多端消息同步        | ❌ 不支持         | ✅ 支持              |
+| 消息存储            | 本地存储         | 云端+本地双存储      |
+| 社交系统            | ❌ 无            | ✅ 群聊/好友会话系统 |
+| 消息提醒            | ❌ 无            | ✅ @提及提醒         |
+| 支持消息类型        | 纯文本           | 多格式（图文/文件/自定义消息）|
+
+本地模式适合作为**本地AI问答工具**使用，腾讯云模式可解锁完整的即时通讯能力
 
 ## 如何部署在 Vercel 上
 
