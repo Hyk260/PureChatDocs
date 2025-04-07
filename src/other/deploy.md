@@ -4,9 +4,9 @@
 
 ## Vercel 部署流程
 
-### 准备好你的 im appid 和 appkey
+<!-- ### 准备好你的 im appid 和 appkey
 
-[如何获取腾讯im appid 和 appkey](/feedback/questions.html#如何获取腾讯im-appid-和-appkey)
+[如何获取腾讯im appid 和 appkey](/feedback/questions.html#如何获取腾讯im-appid-和-appkey) -->
 
 ### 点击下方按钮进行部署
 
@@ -15,8 +15,8 @@
 <!-- [![][deploy-button]][deploy-link] -->
 直接使用 GitHub 账号登录即可，在环境变量页填入
 `ENABLE_EXPERIMENTAL_COREPACK` （实验性 corepack）
-`VITE_IM_SDK_APPID`（腾讯IM sdkappid）
-`VITE_SERVICE_BASE_URL`（服务器地址）
+<!-- `VITE_IM_SDK_APPID`（腾讯IM sdkappid）
+`VITE_SERVICE_BASE_URL`（服务器地址） -->
 
 ### 部署完毕后，即可开始使用
 
