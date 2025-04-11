@@ -88,6 +88,10 @@ pnpm run app:builder:mac
 ## 后端代码 
 基于 Node.js 的 API 服务，[项目地址](https://github.com/Hyk260/PureChatApi)
 
+<Callout type='tip'>
+  本地模式无需配置后端
+</Callout>
+
 ## VSCode插件
 
 本项目推荐使用 VSCode 进行开发，项目里面已内置 VSCode 配置，包含推荐的插件和设置。

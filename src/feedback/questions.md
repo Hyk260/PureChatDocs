@@ -145,7 +145,7 @@ ignore-workspace-root-check=true
 <img src="/images/im-2.png">
 
 ## 如何使用腾讯im sdk?
-在 `.env` 文件中[配置](https://github.com/Hyk260/PureChat/blob/main/.env#L8) `VITE_LOCAL_MODE=Y` 即可启用腾讯云sdk模式（默认为N）
+在 `.env` 文件中[配置](https://github.com/Hyk260/PureChat/blob/main/.env#L8) `VITE_LOCAL_MODE=N` 即可启用腾讯云sdk模式（默认为Y）
 | 特性                | 本地模式         | 腾讯云 SDK 模式       |
 |--------------------|------------------|---------------------|
 | 多端消息同步        | ❌ 不支持         | ✅ 支持              |

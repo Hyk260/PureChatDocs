@@ -7,8 +7,13 @@
 
 加入社群 [QQ群(194541068)](https://jq.qq.com/?_wv=1027&k=Cd4Ihd2J)
 
-## 特性
-[README](https://github.com/Hyk260/PureChat/blob/main/README.md)
+<Callout type='tip'>
+PureChat目前支持两种模式 本地模式（默认）与腾讯sdk IM即使通讯模式 
+
+可通过[.env](https://github.com/Hyk260/PureChat/blob/main/.env#L1)配置文件的`VITE_LOCAL_MODE`切换
+
+如何开启可查看[如何使用腾讯im-sdk](/feedback/questions.html#如何使用腾讯im-sdk)
+</Callout>
 
 ## 分支
 - main为主分支 基于`Vite5`构建
@@ -52,7 +57,7 @@
 - 基于 `wangEditor 5` 的富文本框，支持多类型消息混合发送，满足个性化表达。
 
 ### AI大模型
-- 集成 OpenAI，Ollama，DeepSeek，零一万物，智谱，等大模型，支持上下文理解，自定义预设提示词，流式输出，需要使用自己的key。
+- 集成 OpenAI，Ollama，DeepSeek，零一万物，智谱，等大模型，支持上下文理解，联网搜索，自定义预设提示词，流式输出，需要使用自己的key。
 
 ### 会话列表功能
 - 切换会话时，输入框草稿自动保存与回填，方便用户继续编辑。
