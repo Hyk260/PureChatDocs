@@ -1,14 +1,15 @@
 # 项目介绍
 
 > PureChat 是一款基于 Vue3 + ElementPlus，结合 AI 和前沿技术的聊天应用，内置OpenAI，Ollama，DeepSeek等大预言模型，支持 Markdown 渲染，聊天记录生成截图，主题切换，助力开发者快速掌握现代技术。
-- 体验链接：[网页版](https://purechat.cn)
+- 体验链接：[cloud 腾讯云im sdk即使通讯模式](https://purechat.cn)
+- 体验链接：[local 本地模式](https://local.purechat.cn)
 
 关注社交账号 获取最新动态: [公众号](http://mmbiz.qpic.cn/sz_mmbiz_jpg/jfyEomMz9MYlSVaNrB0yfPKcGm2OmPfCZiaHR9r1Zo0YzSro1T8MonB6OpkcGiamhHD5Sv0LPLYWS2HdaeUamDqQ/0)
 
 加入社群 [QQ群(194541068)](https://jq.qq.com/?_wv=1027&k=Cd4Ihd2J)
 
 <Callout type='tip'>
-PureChat目前支持两种模式 本地模式（默认）与腾讯sdk IM即使通讯模式 
+PureChat目前支持两种模式 本地模式（默认）与腾讯云im sdk即使通讯模式
 
 可通过[.env](https://github.com/Hyk260/PureChat/blob/main/.env#L1)配置文件的`VITE_LOCAL_MODE`切换
 
@@ -17,7 +18,6 @@ PureChat目前支持两种模式 本地模式（默认）与腾讯sdk IM即使�
 
 ## 分支
 - main为主分支 基于`Vite5`构建
-<!-- - master分支基于`Vue CLI5`构建（不再维护） -->
 - electron分支基于main开发使用`electron-vite`构建
 
 ## 技术架构
