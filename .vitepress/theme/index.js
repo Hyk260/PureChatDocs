@@ -3,9 +3,9 @@ import DefaultTheme from "vitepress/theme";
 import { h, watch } from "vue";
 import layout from "./layout.vue";
 import Callout from "./components/Callout.vue";
+import Confetti from "./components/Confetti.vue";
 import DeployButton from "./components/DeployButton.vue";
 import ContentIntegrations from "./components/ContentIntegrations.vue";
-import AsideSponsors from "./components/AsideSponsors.vue";
 import TwoslashFloatingVue from "@shikijs/vitepress-twoslash/client";
 
 // import "./style/style.css";
@@ -23,14 +23,12 @@ let homePageStyle = null;
 export default {
   extends: DefaultTheme,
   Layout() {
-    // return h(DefaultTheme.Layout, null, {
-    //   "aside-ads-before": () => h(AsideSponsors),
-    // });
     return h(layout);
   },
   enhanceApp({ app, router, siteData }) {
     if (typeof window === "undefined") return;
     app.component("Callout", Callout);
+    app.component("Confetti", Confetti);
     app.component("DeployButton", DeployButton);
     app.component("ContentIntegrations", ContentIntegrations);
     app.use(TwoslashFloatingVue);

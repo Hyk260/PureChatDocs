@@ -10,17 +10,19 @@ const giscusKey = ref(true)
 watch(route, () => {
   giscusKey.value = !giscusKey.value
 })
+
+// https://github.com/Hyk260/pure-chat-docs-giscus
 </script>
 
 <template>
-  <div class="giscus">
+  <div class="mt-8">
     <Giscus
       :key="giscusKey"
       host="https://giscus.app"
       repo="Hyk260/pure-chat-docs-giscus"
       repoId="R_kgDOObmzEA"
-      category="Q&A"
-      categoryId="DIC_kwDOObmzEM4CpONr"
+      category="General"
+      categoryId="DIC_kwDOObmzEM4CpONq"
       :theme="isDark ? 'dark' : 'light'"
       lang="zh-CN"
       loading="lazy"

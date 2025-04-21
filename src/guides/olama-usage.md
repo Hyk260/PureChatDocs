@@ -1,13 +1,10 @@
 # 在 PureChat 中使用 Ollama
 
-
 Ollama 是一款强大的本地运行大型语言模型（LLM）的框架，支持多种语言模型，包括 Llama 2, Mistral 等。现在，PureChat 已经支持与 Ollama 的集成，这意味着你可以在 PureChat 中轻松使用 Ollama 提供的语言模型来增强你的应用。
 
 本文档将指导你如何在 PureChat 中使用 Ollama：
 
-
 ## 在 macOS 下使用 Ollama
-
 
 ### 本地安装 Ollama
 

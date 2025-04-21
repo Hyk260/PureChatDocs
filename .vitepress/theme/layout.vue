@@ -3,6 +3,7 @@ import { onMounted, ref } from "vue";
 import DefaultTheme from "vitepress/theme";
 // import HomePage from "./components/HomePage.vue";
 import DocAfter from "./components/DocAfter.vue";
+// import AsideSponsors from "./components/AsideSponsors.vue";
 import { useImageView } from "../utils/useImageView";
 import { useToggleTheme } from "../utils/useToggleTheme";
 import "uno.css";
@@ -31,6 +32,9 @@ onMounted(() => {
 
 <template>
   <DefaultTheme.Layout>
+    <template #aside-ads-before>
+      <!-- <AsideSponsors /> -->
+    </template>
     <template #home-features-after>
       <!-- <HomePage /> -->
     </template>

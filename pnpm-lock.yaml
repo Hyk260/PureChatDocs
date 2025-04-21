@@ -11,6 +11,9 @@ importers:
       '@giscus/vue':
         specifier: ^3.1.1
         version: 3.1.1(vue@3.5.13(typescript@5.7.3))
+      canvas-confetti:
+        specifier: ^1.9.3
+        version: 1.9.3
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
@@ -806,6 +809,9 @@ packages:
   cac@6.7.14:
     resolution: {integrity: sha512-b6Ilus+c3RrdDk+JhLKUAQfzzgLEPy6wcXqS7f/xe1EETvsDP6GORG7SFuOs6cID5YkqchW/LXZbX5bc8j7ZcQ==}
     engines: {node: '>=8'}
+
+  canvas-confetti@1.9.3:
+    resolution: {integrity: sha512-rFfTURMvmVEX1gyXFgn5QMn81bYk70qa0HLzcIOSVEyl57n6o9ItHeBtUSWdvKAPY0xlvBHno4/v3QPrT83q9g==}
 
   ccount@2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
@@ -2343,6 +2349,8 @@ snapshots:
       fill-range: 7.1.1
 
   cac@6.7.14: {}
+
+  canvas-confetti@1.9.3: {}
 
   ccount@2.0.1: {}
 
