@@ -1,11 +1,11 @@
 <script setup>
-import { ref, watch } from 'vue'
-import { useRoute, useData } from 'vitepress'
-import Giscus from '@giscus/vue'
+import { ref, watch } from "vue";
+import { useRoute, useData } from "vitepress";
+import Giscus from "@giscus/vue";
 
-const route = useRoute()
-const { isDark } = useData()
-const giscusKey = ref(true)
+const route = useRoute();
+const { isDark } = useData();
+const giscusKey = ref(true);
 
 watch(route, () => {
   giscusKey.value = !giscusKey.value
@@ -32,3 +32,9 @@ watch(route, () => {
     />
   </div>
 </template>
+
+<style>
+.giscus {
+  margin-top: 1.8em;
+}
+</style>
