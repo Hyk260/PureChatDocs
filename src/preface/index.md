@@ -16,10 +16,6 @@ PureChat目前支持两种模式 本地模式（默认）与腾讯云im sdk即�
 如何开启可查看[如何使用腾讯im-sdk](/feedback/questions.html#如何使用腾讯im-sdk)
 </Callout>
 
-## 分支
-- main为主分支 基于`Vite5`构建
-- electron分支基于main开发使用`electron-vite`构建
-
 ## 技术架构
 - 前端: Vue3、Vite5、Electron、ElementPlus
 - 后端: Nodejs、Express
@@ -72,10 +68,9 @@ PureChat目前支持两种模式 本地模式（默认）与腾讯云im sdk即�
 ## Elecron
 
 <Callout type='tip'>
-  确保应用在桌面平台上拥有良好的兼容性和体验，支持 web 所有功能。
+  获取源码联系作者
 </Callout>
 
-- [Electron](https://github.com/Hyk260/PureChat/tree/electron)
 - 桌面图标高亮闪烁提示：直观地识别到有新消息或通知，提升使用体验。
 - 自定义截图功能：根据自己的需求进行截图，并方便地分享屏幕内容，增强了应用的实用性，尤其在需要快速交流信息的场景中。
 - 支持外部协议打开应用：通过外部协议，可以方便地与其他应用进行交互，例如从浏览器或其他软件中直接打开特定的功能或页面，提升了应用的整合性。

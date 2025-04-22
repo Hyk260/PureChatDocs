@@ -2,15 +2,19 @@
 
 ## 环境准备
 
-::: tip 兼容性注意
-Vite 需要 [Node.js](https://nodejs.org/en/) 版本 18+ 或 20+。然而，有些模板需要依赖更高的 Node 版本才能正常运行，当你的包管理器发出警告时，请注意升级你的 Node 版本。
-
+::: tip Web
  - Node.js 版本 18.20+
  - pnpm >= 8.7.0，推荐最新版本。
 :::
 
-::: tip electron 本地开发注意
+::: tip Electron 本地开发注意
   - Node.js 版本 22.14.0+
+  - 推荐使用yarn
+:::
+
+::: tip 兼容性注意
+  Vite 需要[Node.js](https://nodejs.org/en/)版本 18+ 或 20+。
+  然而，有些模板需要依赖更高的 Node 版本才能正常运行，当你的包管理器发出警告时，请注意升级你的 Node 版本。
 :::
 
 ## 拉取代码
@@ -29,10 +33,6 @@ git clone https://gitee.com/H260788/PureChat.git
 
 <Callout type='warning'>
   最新版本的代码以GitHub为准
-</Callout>
-
-<Callout type='tip'>
-  main 分支为web端代码，electron 分支为桌面端代码
 </Callout>
 
 #### 安装依赖
@@ -86,7 +86,11 @@ pnpm run app:builder:mac
 :::
 
 ## 后端代码 
-基于 Node.js 的 API 服务，[项目地址](https://github.com/Hyk260/PureChatApi)
+基于 Node.js 的 API 服务
+<!-- [项目地址](https://github.com/Hyk260/PureChatApi) -->
+<Callout type='tip'>
+  获取源码联系作者
+</Callout>
 
 <Callout type='tip'>
   本地模式无需配置后端
