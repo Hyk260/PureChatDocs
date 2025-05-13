@@ -7,7 +7,7 @@ titleTemplate: docs
 hero:
   name: PureChat
   text: 聊天应用与AI开发框架
-  tagline: 基于 Vue3， Vite，Electron构建
+  tagline: 基于Vue3，Vite6，Electron构建
   image:
     src: https://ljx-1307934606.cos.ap-beijing.myqcloud.com/log.png
     alt: PureChat
@@ -39,3 +39,4 @@ features:
     title: 截屏分享
     details: 聊天记录支持生成截图并支持一键复制
 ---
+<Confetti />

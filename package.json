@@ -5,6 +5,7 @@
   "description": "The documentation of PureChat",
   "devDependencies": {
     "@iconify-json/vscode-icons": "^1.1.33",
+    "@nolebase/vitepress-plugin-enhanced-readabilities": "^2.17.0",
     "@shikijs/vitepress-twoslash": "^1.22.2",
     "unocss": "^65.4.3",
     "vitepress": "1.6.3",

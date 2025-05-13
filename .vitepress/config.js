@@ -124,7 +124,9 @@ export default defineConfig(({ mode }) => {
       // https://vitepress.dev/zh/reference/site-config#ignoredeadlinks
       ignoreDeadLinks: [/^\/play/, /^\/interactive/, /:\/\/localhost/],
       markdown: {
+        math: true,
         config(md) {
+          // 代码组图标
           md.use(groupIconMdPlugin);
         },
         codeTransformers: [transformerTwoslash()],
