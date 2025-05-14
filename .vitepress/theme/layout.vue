@@ -6,7 +6,7 @@ import DocAfter from "./components/DocAfter.vue";
 // import AsideSponsors from "./components/AsideSponsors.vue";
 import { useImageView } from "../utils/useImageView";
 import { useToggleTheme } from "../utils/useToggleTheme";
-import { NolebaseEnhancedReadabilitiesMenu, NolebaseEnhancedReadabilitiesScreenMenu, } from '@nolebase/vitepress-plugin-enhanced-readabilities/client';
+// import { NolebaseEnhancedReadabilitiesMenu, NolebaseEnhancedReadabilitiesScreenMenu } from '@nolebase/vitepress-plugin-enhanced-readabilities/client';
 import "uno.css";
 
 const warehouse = ref({});
@@ -43,10 +43,10 @@ onMounted(() => {
       <DocAfter />
     </template>
     <template #nav-bar-content-after>
-      <NolebaseEnhancedReadabilitiesMenu />
+      <!-- <NolebaseEnhancedReadabilitiesMenu /> -->
     </template>
-        <template #nav-screen-content-after>
-      <NolebaseEnhancedReadabilitiesScreenMenu />
+    <template #nav-screen-content-after>
+      <!-- <NolebaseEnhancedReadabilitiesScreenMenu /> -->
     </template>
   </DefaultTheme.Layout>
 </template>

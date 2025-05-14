@@ -178,7 +178,7 @@ export default defineConfig(({ mode }) => {
           customIcon: {
             gitlab: "vscode-icons:file-type-gitlab",
           },
-        }),
+        })
       ],
       // server: {
       //   open: true,

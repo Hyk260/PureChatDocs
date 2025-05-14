@@ -6,8 +6,9 @@ import Callout from "./components/Callout.vue";
 import Confetti from "./components/Confetti.vue";
 import DeployButton from "./components/DeployButton.vue";
 import ContentIntegrations from "./components/ContentIntegrations.vue";
+
 import TwoslashFloatingVue from "@shikijs/vitepress-twoslash/client";
-import { NolebaseEnhancedReadabilitiesPlugin } from '@nolebase/vitepress-plugin-enhanced-readabilities/client';
+// import { NolebaseEnhancedReadabilitiesPlugin } from '@nolebase/vitepress-plugin-enhanced-readabilities/client';
 
 // import "./style/style.css";
 import "./style/overrides.css";
@@ -17,7 +18,7 @@ import "./style/iconify.css";
 import "./style/index.css";
 
 import "@shikijs/vitepress-twoslash/style.css";
-import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css';
+// import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css';
 import "virtual:group-icons.css";
 
 let homePageStyle = null;
@@ -34,9 +35,9 @@ export default {
     app.component("DeployButton", DeployButton);
     app.component("ContentIntegrations", ContentIntegrations);
     app.use(TwoslashFloatingVue);
-    app.use(NolebaseEnhancedReadabilitiesPlugin, {
-      spotlight: { disableHelp: true, defaultToggle: true }
-    });
+    // app.use(NolebaseEnhancedReadabilitiesPlugin, {
+    //   spotlight: { disableHelp: true, defaultToggle: true }
+    // });
 
     watch(
       () => router.route.data.relativePath,
