@@ -28,6 +28,20 @@ Vercel 分配的域名 DNS 在某些区域被污染了，绑定自定义域名�
 
 如果你根据上述中的一键部署步骤部署了自己的项目，你可能会发现总是被提示 “有可用更新”。这是因为 Vercel 默认为你创建新项目而非 fork 本项目，这将导致无法准确检测更新。
 
+## 支持多种部署场景
+
+### Web 应用程序
+
+- 标准 Web 部署
+- GitHub 页面
+- CDN 优化的构建
+
+### 桌面应用程序 （Electron）
+
+- Windows （.exe）
+- macOS （.dmg）
+> 每个部署选项都可以通过环境变量和构建标志进行配置。
+
 <!-- LINK GROUP -->
 
 [deploy-button]: https://vercel.com/button

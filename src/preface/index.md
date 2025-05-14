@@ -1,6 +1,6 @@
-# 项目介绍
+# 介绍
 
-> PureChat 是一款基于 Vue3 + ElementPlus，结合 AI 和前沿技术的聊天应用，内置OpenAI，Ollama，DeepSeek等大预言模型，支持 Markdown 渲染，聊天记录生成截图，主题切换，助力开发者快速掌握现代技术。
+PureChat 将传统的即时消息与 AI 驱动的对话结合在一个统一的界面中。它既可以作为功能性聊天应用程序，也可以作为 AI 开发的框架。
 - 体验链接：[cloud 腾讯云im sdk即使通讯模式](https://purechat.cn)
 - 体验链接：[local 本地模式](https://local.purechat.cn)
 
@@ -16,9 +16,46 @@ PureChat目前支持两种模式 本地模式（默认）与腾讯云im sdk即�
 如何开启可查看[如何使用腾讯im-sdk](/feedback/questions.html#如何使用腾讯im-sdk)
 </Callout>
 
+## 主要特点：
+
+- 基于腾讯 IM SDK 的聊天功能
+- 支持多种 AI 模型（OpenAI、Ollama、DeepSeek、ZhiPu 等）
+- 用于 AI 响应的 Web 搜索集成
+- 使用代码高亮显示的 Markdown 渲染
+- 屏幕截图生成和共享
+- 主题切换（明暗模式）
+- 桌面应用程序支持（通过 Electron）
+
 ## 技术架构
 - 前端: Vue3、Vite5、Electron、ElementPlus
 - 后端: Nodejs、Express
+
+## 配置系统
+> PureChat 可通过环境变量进行高度配置，允许用户自定义：
+1. 核心应用程序设置：
+
+- 本地/云模式
+- 路由器历史模式
+- 存储前缀
+- 基本 URL
+2. AI 提供程序设置：
+
+- 各种提供商的 API 密钥
+- 基本 URL
+- 模型配置
+3. 构建配置：
+
+- CDN 使用情况
+- 开发工具
+- 映射源
+
+## 认证
+
+> PureChat 通过以下方式提供身份验证：
+
+1. 用户名/密码登录
+2. GitHub登录
+
 ## Web
 
 ### @成员功能
@@ -109,3 +146,9 @@ PureChat / tools:
 <img src="/screenshot/screenshot.png">
 
 <!-- <ContentImages /> -->
+
+## 总结
+
+PureChat 是一款全面的聊天应用程序，它将传统的即时消息与高级 AI 功能集成在一起。其模块化架构、可扩展的 AI 集成系统和灵活的配置选项使其成为强大的应用程序，也是 AI 增强通信应用程序的坚实基础。
+
+该系统旨在通过其抽象层和模块化组件轻松扩展新的 AI 模型提供程序和功能。Vue 3 基础提供了一个基于组件的反应式 UI，可在不同平台上提供流畅的用户体验。
