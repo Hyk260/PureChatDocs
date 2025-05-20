@@ -52,7 +52,6 @@ onMounted(() => {
 </template>
 
 <style>
-/* 图片遮挡 */
 .medium-zoom-overlay {
   z-index: 999;
   --at-apply: "card-df-br";

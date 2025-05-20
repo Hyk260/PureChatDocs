@@ -21,11 +21,11 @@
 
 ::: code-group
 
-```bash [GitHub]
+```bash [github]
 git clone https://github.com/Hyk260/PureChat.git
 ```
 
-```bash [Gitee]
+```bash [gitee]
 git clone https://gitee.com/H260788/PureChat.git
 ```
 

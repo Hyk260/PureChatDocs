@@ -4,7 +4,7 @@ import { defineConfig, loadEnv } from "vitepress";
 import {
   groupIconMdPlugin,
   groupIconVitePlugin,
-  // localIconLoader,
+  localIconLoader,
 } from "vitepress-plugin-group-icons";
 import { transformerTwoslash } from "@shikijs/vitepress-twoslash";
 import { qqSvg } from "../src/icon/qqSvg";
@@ -127,7 +127,9 @@ export default defineConfig(({ mode }) => {
         math: true,
         config(md) {
           // 代码组图标
-          md.use(groupIconMdPlugin);
+          md.use(groupIconMdPlugin, {
+            titleBar: { includeSnippet: true },
+          });
         },
         codeTransformers: [transformerTwoslash()],
         theme: {
@@ -176,13 +178,17 @@ export default defineConfig(({ mode }) => {
         UnoCSS(),
         groupIconVitePlugin({
           customIcon: {
+            github: localIconLoader(import.meta.url, './assets/icon/mdi--github.svg'),
+            gitee: localIconLoader(import.meta.url, './assets/icon/simple-icons--gitee.svg'),
             gitlab: "vscode-icons:file-type-gitlab",
+            js: "vscode-icons:file-type-js-official",
+            json: "vscode-icons:file-type-json",
           },
         })
       ],
-      // server: {
-      //   open: true,
-      // },
+      server: {
+        open: true,
+      },
     },
   }
 });
