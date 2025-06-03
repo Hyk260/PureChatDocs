@@ -18,7 +18,7 @@ const Nav = [
     text: "链接",
     items: [
       { text: "在线预览", link: "https://purechat.cn" },
-      { text: "后端地址", link: "https://github.com/Hyk260/PureChatApi" },
+      // { text: "后端地址", link: "https://github.com/Hyk260/PureChatApi" },
       { text: "Electron", link: "https://github.com/Hyk260/PureChat/releases" },
       { text: "gitee仓库", link: "https://gitee.com/H260788/PureChat" },
       { text: "github仓库", link: "https://github.com/Hyk260/PureChat" },
