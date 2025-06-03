@@ -1,33 +1,22 @@
 <script setup>
-import { onMounted, ref } from "vue";
+import { onMounted } from "vue";
 import DefaultTheme from "vitepress/theme";
 // import HomePage from "./components/HomePage.vue";
 import DocAfter from "./components/DocAfter.vue";
 // import AsideSponsors from "./components/AsideSponsors.vue";
 import { useImageView } from "../utils/useImageView";
+import { fetchLatestRelease } from '../utils/common';
 import { useToggleTheme } from "../utils/useToggleTheme";
 // import { NolebaseEnhancedReadabilitiesMenu, NolebaseEnhancedReadabilitiesScreenMenu } from '@nolebase/vitepress-plugin-enhanced-readabilities/client';
 import "uno.css";
 
-const warehouse = ref({});
 // 切换动画
 useToggleTheme();
 //  图片缩放
 useImageView();
 
 onMounted(() => {
-  // fetch("https://api.github.com/repos/Hyk260/PureChat/releases/latest").then(
-  //   (res) => {
-  //     res
-  //       .json()
-  //       .then((data) => {
-  //         warehouse.value = data;
-  //       })
-  //       .catch((err) => {
-  //         console.log(err);
-  //       });
-  //   }
-  // );
+  fetchLatestRelease()
 });
 </script>
 

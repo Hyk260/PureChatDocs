@@ -56,6 +56,7 @@ const Sidebar = [
       { text: "项目配置", link: "/preface/config" },
       { text: "目录结构", link: "/preface/directory" },
       { text: "提交规范", link: "/preface/commitlint" },
+      { text: "客户端下载", link: "/preface/download" },
     ],
   },
   {
