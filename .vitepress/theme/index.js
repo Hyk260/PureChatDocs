@@ -4,6 +4,7 @@ import { h, watch } from "vue";
 import layout from "./layout.vue";
 import Callout from "./components/Callout.vue";
 import Confetti from "./components/Confetti.vue";
+import DownloadLink from "./components/DownloadLink.vue";
 import DeployButton from "./components/DeployButton.vue";
 import ContentIntegrations from "./components/ContentIntegrations.vue";
 
@@ -33,6 +34,7 @@ export default {
     app.component("Callout", Callout);
     app.component("Confetti", Confetti);
     app.component("DeployButton", DeployButton);
+    app.component("DownloadLink", DownloadLink);
     app.component("ContentIntegrations", ContentIntegrations);
     app.use(TwoslashFloatingVue);
     // app.use(NolebaseEnhancedReadabilitiesPlugin, {

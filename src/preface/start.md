@@ -76,11 +76,11 @@ pnpm run build
 ```
 
 ```bash [window]
-pnpm run app:builder:win
+pnpm run app:build:win
 ```
 
 ```bash [mac]
-pnpm run app:builder:mac
+pnpm run app:build:mac
 ```
 
 :::

@@ -1,6 +1,8 @@
 // 'local' | 'session';
 export function createStorage(type, storagePrefix = "") {
-  const stg = type === 'session' ? window.sessionStorage : window.localStorage;
+  if (typeof window === "undefined") return;
+  
+  const stg = type === 'session' ? window?.sessionStorage : window?.localStorage;
 
   const storage = {
     set(key, value) {

@@ -32,9 +32,9 @@
     // electron 启动
     "app:dev": "electron-vite dev --watch",
     // electron（打包window）
-    "app:builder:win": "electron-vite build && electron-builder --win",
+    "app:build:win": "electron-vite build && electron-builder --win",
     // electron（打包mac）
-    "app:builder:mac": "electron-vite build && electron-builder --mac",
+    "app:build:mac": "electron-vite build && electron-builder --mac",
   }
 }
 ```
