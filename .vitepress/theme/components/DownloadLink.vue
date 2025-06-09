@@ -2,25 +2,39 @@
 import { computed } from "vue";
 import { localStg } from "../../utils/storage";
 
-const latestRelease = localStg.get("latestRelease");
-const releases = "https://github.com/Hyk260/PureChat/releases";
+defineOptions({
+  name: "DownloadLink"
+});
 
 const props = defineProps({
   type: {
     type: String,
     required: true,
-    // validator: (value: string) => ["portable", "setup"].includes(value),
   },
   platform: {
     type: String,
-    default: "window",
-    validator: (value: string) => ["mac", "window"].includes(value),
+    default: "Window",
+    validator: (value: string) => ["MacOS", "Window"].includes(value),
   },
   version: {
     type: String,
     default: "0.8.3",
   },
+  source: {
+    type: String,
+    default: "gitcode",
+    validator: (value: string) => ["github", "gitcode"].includes(value),
+  }
 });
+
+const latestRelease = localStg.get("latestRelease");
+const downloadSources = {
+  github: "https://github.com/Hyk260/PureChat/releases",
+  gitcode: "https://gitcode.com/Hyk260/PureChat/releases"
+};
+
+// <DownloadLink type="setup.exe" />
+// <DownloadLink platform="Mac" type="arm64.dmg" />
 
 /**
  * 移除版本号前的'v'前缀
@@ -35,10 +49,10 @@ const currentVersion = computed(
   () => removeVPrefix(latestRelease?.tag_name) || props.version
 );
 
-const downloadUrl = computed(
-  () =>
-    `${releases}/download/v${currentVersion.value}/PureChat-${currentVersion.value}-${props.type}`
-);
+const downloadUrl = computed(() => {
+  const baseUrl = downloadSources[props.source as keyof typeof downloadSources];
+  return `${baseUrl}/download/v${currentVersion.value}/PureChat-${currentVersion.value}-${props.type}`;
+});
 </script>
 
 <template>

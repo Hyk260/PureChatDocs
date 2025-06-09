@@ -7,14 +7,23 @@
 </Callout>
 
 ### 安装版（Setup）
-<DownloadLink type="setup.exe" />
+<DownloadLink type="x64-setup.exe" />
+<!-- [PureChat-0.8.3-x64-setup.exe][window-x64-setup-link] -->
 
 ### 便携版（Portable）
-<DownloadLink type="portable.exe" />
+<DownloadLink type="x64-portable.exe" />
+<!-- [PureChat-0.8.3-x64-setup.exe][window-x64-portable-link] -->
 
-## macOS 版本
-<!-- <DownloadLink platform="Mac" /> -->
-<!-- [PureChat-0.8.3.dmg](https://github.com/Hyk260/PureChat/releases/download/v0.8.3/PureChat-0.8.3.dmg) -->
+## MacOS 版本
+<DownloadLink platform="Mac" type="arm64.dmg" />
+<!-- [PureChat-0.8.3-arm64.dmg][mac-arm64-link] -->
 
 ## 其他版本
+
 [GitHub](https://github.com/Hyk260/PureChat/releases)
+
+[GitCode](https://gitcode.com/Hyk260/PureChat/releases)
+
+[window-x64-setup-link]: https://github.com/Hyk260/PureChat/releases/download/v0.8.3/PureChat-0.8.3-x64-setup.exe
+[window-x64-portable-link]: https://github.com/Hyk260/PureChat/releases/download/v0.8.3/PureChat-0.8.3-x64-portable.exe
+[mac-arm64-link]: https://github.com/Hyk260/PureChat/releases/download/v0.8.3/PureChat-0.8.3-arm64.dmg
