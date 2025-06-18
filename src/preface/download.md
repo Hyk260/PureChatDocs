@@ -24,6 +24,16 @@
 
 [GitCode](https://gitcode.com/Hyk260/PureChat/releases)
 
+## 我应该下载哪个版本？
+### MacOS
+- MacOS intel芯片: x64.dmg
+- MacOS apple M芯片: arm64.dmg
+
+### Windows (不再支持Win7)
+- 64位: x64-setup.exe
+- arm64架构: arm64-setup.exe
+- 便携版: x64-portable.exe
+
 [window-x64-setup-link]: https://github.com/Hyk260/PureChat/releases/download/v0.8.3/PureChat-0.8.3-x64-setup.exe
 [window-x64-portable-link]: https://github.com/Hyk260/PureChat/releases/download/v0.8.3/PureChat-0.8.3-x64-portable.exe
 [mac-arm64-link]: https://github.com/Hyk260/PureChat/releases/download/v0.8.3/PureChat-0.8.3-arm64.dmg
