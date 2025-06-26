@@ -24,6 +24,13 @@
 
 [GitCode](https://gitcode.com/Hyk260/PureChat/releases)
 
+## 协议打开PureChat
+[PureChat](purechat://)
+
+<Callout type='tip'>
+  安装版和便携版均可使用协议打开PureChat
+</Callout>
+
 ## 我应该下载哪个版本？
 ### MacOS
 - MacOS intel芯片: x64.dmg
