@@ -9,7 +9,6 @@ import { Nav, Head, Sidebar } from "./plugins/define";
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd())
-  console.log("env", env);
 
   return {
     lang: "zh-CN",

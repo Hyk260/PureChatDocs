@@ -3,28 +3,30 @@
 ``` 
 PureChat
 ├── .github                    // gitHub相关配置文件，工作流、ISSUE模板等
+│   └── workflows/             // GitHub Actions工作流配置
 ├── .vscode                    // vscode插件和设置
 │   ├── extensions.json        // vscode插件(扩展 ctrl+shift+x -> 筛选器扩展 ->推荐)
 │   └── settings.json          // vscode配置(在该项目中生效 可以复制到用户配置文件中)
+│   └── launch.json            // 调试配置
 ├── build                      // vite构建相关配置和插件
-├── dist                       // 打包文件
+├── dist                       // 构建输出目录
 ├── electron                   // electron配置
-│   ├── main                   // electron主进程入口
-│   │   ├── logger             // 日志
-│   │   ├── notification       // 桌面通知功能
-│   │   ├── store              // 数据存储
-│   │   ├── toolkit            // 工具类代码集合
+│   ├── main                   // 主进程代码
+│   │   ├── logger.js          // 日志工具
+│   │   ├── services/          // 主进程服务
 │   │   ├── tray               // 系统托盘
+│   │   ├── ipc.js             // IPC通信
 │   │   ├── platform.js        // 平台相关的工具函数
-│   │   └── config.js          // electron配置
+│   │   └── config.js          // 主进程配置
 │   └── preload                // 预加载脚本
 ├── node_modules               // 依赖包
-├── packages                   // 自定义包目录
+├── packages                   // 共享包
 │   ├── database               // 数据库相关代码
 │   └── shared                 // 共享代码
 ├── output                     // electron编译输出目录
 ├── public                     // 静态目录
-├── resources                  // electron资源目录
+├── resources                  // 应用资源
+│   └── ScreenCapture.exe      // 屏幕截图工具
 ├── src                        // 源代码
 │   ├── ai                     // ai配置
 │   ├── assets                 // 主题字体图片 svg icons 等静态资源
@@ -41,9 +43,12 @@ PureChat
 │   ├── styles                 // 全局样式
 │   ├── utils                  // 全局公用方法
 │   ├── views                  // view页面目录
-│   ├── App.vue                // 入口页面
-│   └── main.js                // 入口 加载组件 初始化等
-├── static                     // 静态资源
+│   ├── App.vue                // 根组件
+│   └── main.js                // 应用入口
+├── tests/                     // 测试文件
+│   ├── index.test.js          // 测试入口
+│   ├── main.setup.js          // 主进程测试设置
+│   └── renderer.setup.js      // 渲染进程测试设置
 ├── .browserslistrc            // 配置兼容浏览器
 ├── .env                       // 全局环境变量
 ├── .env.development           // 开发环境变量
@@ -58,6 +63,7 @@ PureChat
 ├── .prettierignore            // prettier忽略项
 ├── babel.config.js            // babel-loader配置
 ├── commitlint.md              // Commitlint提交规范
+├── index.html                 // 主页面
 ├── jsconfig.json              // JavaScript配置
 ├── uno.config.ts              // 原子css框架unocss配置
 ├── vercel.json                // vercel配置
