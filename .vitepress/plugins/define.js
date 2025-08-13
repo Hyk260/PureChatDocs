@@ -58,6 +58,7 @@ export const Sidebar = [
       // { text: "技术网站", link: "/other/recommendation" },
       { text: "更新日志", link: "/other/logs" },
       { text: "私有化部署", link: "/other/deploy" },
+      { text: "协议打开", link: "/other/protocol" },
     ],
   },
   {

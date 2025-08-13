@@ -1,7 +1,9 @@
 // https://vitepress.dev/guide/custom-theme
 import DefaultTheme from "vitepress/theme";
 import { h, watch } from "vue";
+import { useElementPlus } from "./elementPlus";
 import layout from "./layout.vue";
+import ConfigTool from "./components/ConfigTool.vue";
 import Callout from "./components/Callout.vue";
 import Confetti from "./components/Confetti.vue";
 import DownloadLink from "./components/DownloadLink.vue";
@@ -36,11 +38,12 @@ export default {
     app.component("DeployButton", DeployButton);
     app.component("DownloadLink", DownloadLink);
     app.component("ContentIntegrations", ContentIntegrations);
+    app.component("ConfigTool", ConfigTool);
     app.use(TwoslashFloatingVue);
     // app.use(NolebaseEnhancedReadabilitiesPlugin, {
     //   spotlight: { disableHelp: true, defaultToggle: true }
     // });
-
+    useElementPlus(app);
     watch(
       () => router.route.data.relativePath,
       () => updateHomePageStyle(location.pathname === "/"),

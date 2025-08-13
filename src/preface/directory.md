@@ -63,14 +63,16 @@ PureChat
 ├── .prettierignore            // prettier忽略项
 ├── babel.config.js            // babel-loader配置
 ├── commitlint.md              // Commitlint提交规范
+├── dev-app-update.yml         // 开发应用更新配置
+├── electron-builder.yml       // Electron构建配置
+├── electron.vite.config.js    // Electron Vite配置
 ├── index.html                 // 主页面
 ├── jsconfig.json              // JavaScript配置
 ├── uno.config.ts              // 原子css框架unocss配置
 ├── vercel.json                // vercel配置
 ├── LICENSE                    // 开源协议
 ├── nginx.conf                 // nginx配置
-├── package.json               // 项目名称 项目版本 项目描述 项目运行的一些脚本(依赖)
-├── pnpm-lock.yaml             // npm包管理器pnpm依赖锁定文件
+├── package.json               // 项目配置
 ├── prettier.config.js         // prettier配置
 ├── README.md                  // 说明
 ├── vite.config.js             // vite配置
