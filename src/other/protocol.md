@@ -32,4 +32,5 @@
 - Base URL 必须是有效的 HTTPS 地址
 - 生成的链接包含敏感信息，请谨慎分享
 
+## PureChat 链接生成器
 <ConfigTool />

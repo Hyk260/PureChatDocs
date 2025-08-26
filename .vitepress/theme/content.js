@@ -29,7 +29,7 @@ export const integrations = [
     icon: "vscode-icons--file-type-unocss",
   },
   {
-    name: "vscode",
+    name: "Vscode",
     link: "https://code.visualstudio.com",
     icon: "vscode-icons--file-type-vscode",
   },
@@ -44,24 +44,49 @@ export const integrations = [
     icon: "logos--pnpm",
   },
   {
-    name: "vercel",
+    name: "Vercel",
     link: "https://vercel.com",
     icon: "logos--vercel-icon",
   },
   {
-    name: "ollama",
+    name: "Ollama",
     // link: "https://ollama.com",
     link: "https://github.com/ollama/ollama-js",
     icon: "simple-icons--ollama",
   },
   {
-    name: "nodejs",
+    name: "Nodejs",
     link: "https://nodejs.cn/",
     icon: "logos--nodejs",
   },
   {
-    name: "axios",
+    name: "Axios",
     link: "https://www.axios-http.cn/",
     icon: "logos--axios",
+  },
+  {
+    name: "Pinia",
+    link: "https://pinia.vuejs.org/zh",
+    icon: "skill-icons--pinia-light",
+  },
+  {
+    name: "Typescript",
+    link: "https://www.typescriptlang.org",
+    icon: "skill-icons--typescript",
+  },
+  {
+    name: "Vitest",
+    link: "https://cn.vitest.dev",
+    icon: "logos--vitest",
+  },
+  {
+    name: "Prettier",
+    link: "https://prettier.io",
+    icon: "material-icon-theme--prettier",
+  },
+  {
+    name: "Lucide",
+    link: "https://lucide.dev",
+    icon: "simple-icons--lucide",
   },
 ];
