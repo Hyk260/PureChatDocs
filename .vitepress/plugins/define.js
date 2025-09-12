@@ -2,7 +2,7 @@ export const Nav = [
   { text: "介绍", link: "/preface/" },
   { text: "常见问题", link: "/feedback/questions" },
   {
-    text: "v0.8.4",
+    text: "v0.8.8",
     items: [
       { text: "更新日志", link: "/other/logs" }
     ]
