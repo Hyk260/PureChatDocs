@@ -33,7 +33,7 @@ API Key 是使用 PureChat 进行大语言模型会话的必要信息，本节�
 |                                                              | 服务商                                                     | 特性说明                                                     | Proxy 代理地址                           | 链接                            |
 | ------------------------------------------------------------ | ---------------------------------------------------------- | ------------------------------------------------------------ | ---------------------------------------- | ------------------------------- |
 | <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/17870709/296272721-c3ac0bf3-e433-4496-89c4-ebdc20689c17.jpg" width="48" /> | **AiHubMix**                                               | 使用 OpenAI 企业接口，全站模型价格为官方 **6 折**（含 GPT-4 ） | `https://aihubmix.com/v1`                | [获取](https://lobe.li/XHnZIUP) |
-|                                                              | [胜算云](https://www.shengsuanyun.com/?from=cline-chinese) | AI模型聚合云服务平台，可访问全球主流大语言模型（如 ChatGPT、Claude、Gemini等） | `https://router.shengsuanyun.com/api/v1` | [获取](https://www.shengsuanyun.com/)                              |
+|                                                              | [胜算云](https://www.shengsuanyun.com/?from=CH_XZG5OKZS) | AI模型聚合云服务平台，可访问全球主流大语言模型（如 ChatGPT、Claude、Gemini等） | `https://router.shengsuanyun.com/api/v1` | [获取免费试用额度](https://www.shengsuanyun.com/?from=CH_XZG5OKZS)                              |
 
 > **免责申明**: 在此推荐的 OpenAI API Key 由第三方代理商提供，所以我们不对 API Key 的 **有效性** 和 **安全性** 负责，请你自行承担购买和使用 API Key 的风险。
 
