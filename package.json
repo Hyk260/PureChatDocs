@@ -1,7 +1,7 @@
 {
   "name": "pure-chat-docs",
   "type": "module",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "The documentation of PureChat",
   "devDependencies": {
     "@iconify-json/vscode-icons": "^1.1.33",

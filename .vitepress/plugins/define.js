@@ -59,6 +59,7 @@ export const Sidebar = [
       { text: "更新日志", link: "/other/logs" },
       { text: "私有化部署", link: "/other/deploy" },
       { text: "协议打开", link: "/other/protocol" },
+      { text: "通过链接分享配置", link: "/other/settings-url-share" },
     ],
   },
   {
