@@ -82,4 +82,10 @@ export const Sidebar = [
       { text: "Ollama使用", link: "/guides/olama-usage" },
     ],
   },
+  {
+     text: "第三方服务商接入指南",
+      items: [
+      { text: "接入胜算云API", link: "/provider/shengsuanyun" },
+    ],
+  }
 ];

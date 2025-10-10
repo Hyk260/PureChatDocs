@@ -1,4 +1,3 @@
-// 'local' | 'session';
 export function createStorage(type, storagePrefix = "") {
   if (typeof window === "undefined") return;
   

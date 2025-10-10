@@ -9,9 +9,9 @@ import Confetti from "./components/Confetti.vue";
 import DownloadLink from "./components/DownloadLink.vue";
 import DeployButton from "./components/DeployButton.vue";
 import ContentIntegrations from "./components/ContentIntegrations.vue";
+import { bindFancybox, destroyFancybox } from "./ImgViewer";
 
 import TwoslashFloatingVue from "@shikijs/vitepress-twoslash/client";
-// import { NolebaseEnhancedReadabilitiesPlugin } from '@nolebase/vitepress-plugin-enhanced-readabilities/client';
 
 // import "./style/style.css";
 import "./style/overrides.css";
@@ -19,9 +19,10 @@ import "./style/rainbow.css";
 import "./style/vars.css";
 import "./style/iconify.css";
 import "./style/index.css";
+// 导入链接样式
+// import './style/link.scss'
 
 import "@shikijs/vitepress-twoslash/style.css";
-// import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css';
 import "virtual:group-icons.css";
 
 let homePageStyle = null;
@@ -40,10 +41,13 @@ export default {
     app.component("ContentIntegrations", ContentIntegrations);
     app.component("ConfigTool", ConfigTool);
     app.use(TwoslashFloatingVue);
-    // app.use(NolebaseEnhancedReadabilitiesPlugin, {
-    //   spotlight: { disableHelp: true, defaultToggle: true }
-    // });
     useElementPlus(app);
+    router.onBeforeRouteChange = () => {
+      destroyFancybox();
+    };
+    router.onAfterRouteChange = () => {
+      bindFancybox();
+    };
     watch(
       () => router.route.data.relativePath,
       () => updateHomePageStyle(location.pathname === "/"),
