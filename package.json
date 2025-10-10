@@ -6,6 +6,7 @@
   "devDependencies": {
     "@iconify-json/vscode-icons": "^1.1.33",
     "@shikijs/vitepress-twoslash": "^1.22.2",
+    "markdown-it-mathjax3": "^5.2.0",
     "sass": "^1.91.0",
     "unocss": "^65.4.3",
     "vitepress": "1.6.3",

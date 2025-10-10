@@ -4,11 +4,15 @@ import { defineConfig, loadEnv } from "vitepress";
 import { groupIconMdPlugin } from "vitepress-plugin-group-icons";
 import { transformerTwoslash } from "@shikijs/vitepress-twoslash";
 import { qqSvg } from "../src/icon/qqSvg";
-import { setupVitePlugins, setupViteSearch, transformPageData } from "./plugins/index";
+import {
+  setupVitePlugins,
+  setupViteSearch,
+  transformPageData,
+} from "./plugins/index";
 import { Nav, Head, Sidebar } from "./plugins/define";
 
 export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, process.cwd())
+  const env = loadEnv(mode, process.cwd());
 
   return {
     lang: "zh-CN",
@@ -40,6 +44,12 @@ export default defineConfig(({ mode }) => {
       ignoreDeadLinks: [/^\/play/, /^\/interactive/, /:\/\/localhost/],
       markdown: {
         math: true,
+        // 代码块行号显示
+        lineNumbers: true,
+        // 图片懒加载
+        image: {
+          lazyLoading: true,
+        },
         config(md) {
           // 代码组图标
           md.use(groupIconMdPlugin, {
@@ -82,5 +92,5 @@ export default defineConfig(({ mode }) => {
         open: true,
       },
     },
-  }
+  };
 });
