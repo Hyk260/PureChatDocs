@@ -87,5 +87,14 @@ export const Sidebar = [
       items: [
       { text: "接入胜算云API", link: "/provider/shengsuanyun" },
     ],
-  }
+  },
 ];
+
+if (process.env.NODE_ENV === "development") {
+  Sidebar.push({
+    text: "Development",
+    items: [
+      { text: "md", link: "/dev/md" },
+    ],
+  })
+}
