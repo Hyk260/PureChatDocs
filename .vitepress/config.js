@@ -41,7 +41,8 @@ export default defineConfig(({ mode }) => {
       // https://vitepress.dev/zh/reference/site-config#cleanurls
       cleanUrls: true,
       // https://vitepress.dev/zh/reference/site-config#ignoredeadlinks
-      ignoreDeadLinks: [/^\/play/, /^\/interactive/, /:\/\/localhost/],
+      ignoreDeadLinks: true,
+      // ignoreDeadLinks: [/^\/play/, /^\/interactive/, /:\/\/localhost/],
       markdown: {
         math: true,
         // 代码块行号显示

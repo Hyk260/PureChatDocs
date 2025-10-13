@@ -12,7 +12,7 @@ export default {
 }
 ```
 
-查看 [`markdown` 选项](../reference/site-config#markdown) 获取更多信息。
+查看 [`markdown` 选项](https://vitepress.dev/zh/reference/site-config#markdown) 获取更多信息。
 
 可以在代码块中添加 `:line-numbers` / `:no-line-numbers` 标记来覆盖在配置中的设置。
 

@@ -90,11 +90,11 @@ export const Sidebar = [
   },
 ];
 
-if (process.env.NODE_ENV === "development") {
-  Sidebar.push({
-    text: "Development",
-    items: [
-      { text: "md", link: "/dev/md" },
-    ],
-  })
-}
+// if (process.env.NODE_ENV === "development") {
+//   Sidebar.push({
+//     text: "Development",
+//     items: [
+//       { text: "md", link: "/dev/md" },
+//     ],
+//   })
+// }
