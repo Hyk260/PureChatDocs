@@ -56,6 +56,8 @@ export default defineConfig(({ mode }) => {
           md.use(groupIconMdPlugin, {
             titleBar: { includeSnippet: true },
           });
+          // 预览代码Demo插件
+          md.use(vitepressDemoPlugin); 
         },
         codeTransformers: [transformerTwoslash()],
         theme: {

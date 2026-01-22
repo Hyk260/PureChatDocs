@@ -48,6 +48,9 @@ importers:
       vitepress:
         specifier: 1.6.3
         version: 1.6.3(@algolia/client-search@5.40.0)(async-validator@4.2.5)(postcss@8.5.6)(sass@1.93.2)(search-insights@2.17.3)(typescript@5.9.3)
+      vitepress-demo-plugin:
+        specifier: ^1.5.0
+        version: 1.5.0(shiki@2.5.0)(vitepress@1.6.3(@algolia/client-search@5.40.0)(async-validator@4.2.5)(postcss@8.5.6)(sass@1.93.2)(search-insights@2.17.3)(typescript@5.9.3))(vue@3.5.22(typescript@5.9.3))
       vitepress-plugin-group-icons:
         specifier: ^1.3.5
         version: 1.6.3(markdown-it@14.1.0)(vite@5.4.20(sass@1.93.2))
@@ -1794,6 +1797,13 @@ packages:
         optional: true
       terser:
         optional: true
+
+  vitepress-demo-plugin@1.5.0:
+    resolution: {integrity: sha512-f9qFNbJpNkpEzojxVmnin265vM4IuGF781AmBJcCUCBrh7e5FUxoXyyArJtKNup7/0ygnAzzAg+5nB4pK9OoiA==}
+    peerDependencies:
+      shiki: '*'
+      vitepress: '*'
+      vue: ^3.2.0
 
   vitepress-plugin-auto-frontmatter@1.0.13:
     resolution: {integrity: sha512-NRbaiJaPOQEAsF6kSt5lhjSkBx0kwBzHh8CLaoLwtqE7ypm+jj15VZalVf1El7WhG5ml7k1tHE7C8SxPmZ8NXw==}
@@ -3858,6 +3868,12 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
       sass: 1.93.2
+
+  vitepress-demo-plugin@1.5.0(shiki@2.5.0)(vitepress@1.6.3(@algolia/client-search@5.40.0)(async-validator@4.2.5)(postcss@8.5.6)(sass@1.93.2)(search-insights@2.17.3)(typescript@5.9.3))(vue@3.5.22(typescript@5.9.3)):
+    dependencies:
+      shiki: 2.5.0
+      vitepress: 1.6.3(@algolia/client-search@5.40.0)(async-validator@4.2.5)(postcss@8.5.6)(sass@1.93.2)(search-insights@2.17.3)(typescript@5.9.3)
+      vue: 3.5.22(typescript@5.9.3)
 
   vitepress-plugin-auto-frontmatter@1.0.13:
     dependencies:

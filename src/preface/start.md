@@ -9,7 +9,6 @@
 
 ::: tip Electron 本地开发注意
   - Node.js 版本 22.14.0+
-  - 推荐使用yarn
 :::
 
 ::: tip 兼容性注意
@@ -86,11 +85,11 @@ pnpm run app:build:mac
 :::
 
 ## 后端代码 
-基于 Node.js 的 API 服务
-<!-- [项目地址](https://github.com/Hyk260/PureChatApi) -->
-<Callout type='tip'>
+基于 Next.js 的 API 服务
+[项目地址](https://github.com/Hyk260/PureChatNext)
+<!-- <Callout type='tip'>
   获取源码联系作者
-</Callout>
+</Callout> -->
 
 <Callout type='tip'>
   本地模式无需配置后端

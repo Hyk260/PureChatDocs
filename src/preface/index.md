@@ -18,7 +18,7 @@ PureChat目前支持两种模式 本地模式（默认）与腾讯云im sdk即�
 
 ## 主要特点：
 
-- 基于腾讯 IM SDK 的聊天功能
+- 会话基于腾讯 IM SDK 的聊天功能
 - 支持多种 AI 模型（OpenAI、Ollama、DeepSeek、ZhiPu 等）
 - 用于 AI 响应的 Web 搜索集成
 - 使用代码高亮显示的 Markdown 渲染
@@ -28,7 +28,7 @@ PureChat目前支持两种模式 本地模式（默认）与腾讯云im sdk即�
 
 ## 技术架构
 - 前端: Vue3、Vite5、Electron、ElementPlus
-- 后端: Nodejs、Express
+- 后端: Next、Supabase、PostgreSQL
 
 ## 配置系统
 > PureChat 可通过环境变量进行高度配置，允许用户自定义：
@@ -90,7 +90,7 @@ PureChat目前支持两种模式 本地模式（默认）与腾讯云im sdk即�
 - 基于 `wangEditor 5` 的富文本框，支持多类型消息混合发送，满足个性化表达。
 
 ### AI大模型
-- 集成 OpenAI，Ollama，DeepSeek，零一万物，智谱，等大模型，支持上下文理解，联网搜索，自定义预设提示词，流式输出，需要使用自己的key。
+- 集成 OpenAI，Ollama，DeepSeek，零一万物，智谱，等大模型，支持上下文理解，思考过程，联网搜索，自定义预设提示词，流式输出，需要使用自己的key。
 
 ### 会话列表功能
 - 切换会话时，输入框草稿自动保存与回填，方便用户继续编辑。
