@@ -30,7 +30,7 @@ onMounted(() => {
   </DefaultTheme.Layout>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 .fancybox__container {
   --fancybox-bg: none;
   .fancybox__toolbar {

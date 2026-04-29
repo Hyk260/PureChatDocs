@@ -133,17 +133,17 @@ PureChat / tools:
 
 > 以下使用 https://postspark.app/github-contributions 生成
 
-<img src="/screenshot/liveness.png">
+![liveness](/screenshot/liveness.png)
 
 ## 截图
 
-<img src="/screenshot/chat.png">
+![chat](/screenshot/chat.png)
 
-<img src="/screenshot/discover.png">
+![discover](/screenshot/discover.png)
 
-<img src="/screenshot/config.png">
+![config](/screenshot/config.png)
 
-<img src="/screenshot/screenshot.png">
+![screenshot](/screenshot/screenshot.png)
 
 <!-- <ContentImages /> -->
 

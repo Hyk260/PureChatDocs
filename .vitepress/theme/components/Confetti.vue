@@ -1,5 +1,13 @@
-<script setup>
+<template>
+  <div id="confetti-container"></div>
+</template>
+
+<script setup lang="ts">
 import confetti from "canvas-confetti";
+
+defineOptions({
+  name: "Confetti",
+});
 
 confetti({
   particleCount: 100,

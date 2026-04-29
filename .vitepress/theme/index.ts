@@ -1,8 +1,8 @@
 // https://vitepress.dev/zh/guide/custom-theme
 import DefaultTheme from "vitepress/theme";
 import { h, watch } from "vue";
-
 import { useElementPlus } from "./elementPlus";
+import { setupImageViewerHooks } from "@/hooks/useImageView";
 import Layout from "./components/Layout.vue";
 import ConfigTool from "./components/ConfigTool.vue";
 import Callout from "./components/Callout.vue";
@@ -10,55 +10,32 @@ import Confetti from "./components/Confetti.vue";
 import DownloadLink from "./components/DownloadLink.vue";
 import DeployButton from "./components/DeployButton.vue";
 import ContentIntegrations from "./components/ContentIntegrations.vue";
-import { bindFancybox, destroyFancybox } from "@/hooks/ImgViewer";
 
 import TwoslashFloatingVue from "@shikijs/vitepress-twoslash/client";
 
 import type { Theme } from "vitepress";
 
 // import "./style/style.css";
+// import './style/link.scss'
 import "./style/overrides.css";
 import "./style/rainbow.css";
 import "./style/vars.css";
 import "./style/iconify.css";
 import "./style/index.css";
-// 导入链接样式
-// import './style/link.scss'
 
 import "uno.css";
 import "@shikijs/vitepress-twoslash/style.css";
 import "virtual:group-icons.css";
 
 let homePageStyle: HTMLElement | null = null;
-
-export default {
-  extends: DefaultTheme,
-  Layout() {
-    return h(Layout);
-  },
-  enhanceApp({ app, router, siteData }) {
-    if (typeof window === "undefined") return;
-    app.component("Callout", Callout);
-    app.component("Confetti", Confetti);
-    app.component("DeployButton", DeployButton);
-    app.component("DownloadLink", DownloadLink);
-    app.component("ContentIntegrations", ContentIntegrations);
-    app.component("ConfigTool", ConfigTool);
-    app.use(TwoslashFloatingVue);
-    useElementPlus(app);
-    router.onBeforeRouteChange = () => {
-      destroyFancybox();
-    };
-    router.onAfterRouteChange = () => {
-      bindFancybox();
-    };
-    watch(
-      () => router.route.data.relativePath,
-      () => updateHomePageStyle(location.pathname === "/"),
-      { immediate: true },
-    );
-  },
-} satisfies Theme;
+const GLOBAL_COMPONENTS = {
+  Callout,
+  Confetti,
+  DeployButton,
+  DownloadLink,
+  ContentIntegrations,
+  ConfigTool,
+};
 
 if (typeof window !== "undefined") {
   const browser = navigator.userAgent.toLowerCase();
@@ -83,3 +60,32 @@ function updateHomePageStyle(value: boolean) {
     homePageStyle = null;
   }
 }
+
+const setupHomePageStyleWatcher = (
+  router: Parameters<NonNullable<Theme["enhanceApp"]>>[0]["router"],
+) => {
+  watch(
+    () => router.route.data.relativePath,
+    () => updateHomePageStyle(location.pathname === "/"),
+    { immediate: true },
+  );
+};
+
+const theme: Theme = {
+  extends: DefaultTheme,
+  Layout() {
+    return h(Layout);
+  },
+  enhanceApp({ app, router }) {
+    if (typeof window === "undefined") return;
+    Object.entries(GLOBAL_COMPONENTS).forEach(([name, component]) => {
+      app.component(name, component);
+    });
+    app.use(TwoslashFloatingVue);
+    useElementPlus(app);
+    setupImageViewerHooks(router);
+    setupHomePageStyleWatcher(router);
+  },
+};
+
+export default theme

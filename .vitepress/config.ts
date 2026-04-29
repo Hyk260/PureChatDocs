@@ -90,6 +90,8 @@ export default defineConfig((configEnv) => {
     outDir: path.join(process.cwd(), "docs"),
     // 缓存文件的目录，相对于项目根目录
     cacheDir: path.join(process.cwd(), "cache"),
+    // 静态资产目录，相对于项目根目录
+    // assetsDir: path.join(process.cwd(), "public"),
     vite: {
       plugins: setupVitePlugins(env),
       server: {
