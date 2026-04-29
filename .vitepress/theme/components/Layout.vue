@@ -1,11 +1,15 @@
 <script setup lang="ts">
-import { onMounted } from "vue";
+import { ref,onMounted } from "vue";
 import DefaultTheme from "vitepress/theme";
-// import HomePage from "./HomePage.vue";
-import DocAfter from "./DocAfter.vue";
-// import AsideSponsors from "./AsideSponsors.vue";
 import { fetchLatestRelease } from "@/utils/common";
 import { useToggleTheme } from "@/hooks/useToggleTheme";
+
+import HomePage from "./HomePage.vue";
+import DocAfter from "./DocAfter.vue";
+import NotFound from "./NotFound.vue";
+import AsideSponsors from "./AsideSponsors.vue";
+
+const isAsideAdsBefore = ref(false);
 
 useToggleTheme();
 
@@ -17,13 +21,16 @@ onMounted(() => {
 <template>
   <DefaultTheme.Layout>
     <template #aside-ads-before>
-      <!-- <AsideSponsors /> -->
+      <AsideSponsors v-if="isAsideAdsBefore" />
     </template>
     <template #home-features-after>
-      <!-- <HomePage /> -->
+      <HomePage />
     </template>
     <template #doc-after>
       <DocAfter />
+    </template>
+    <template #not-found>
+      <!-- <NotFound /> -->
     </template>
     <template #nav-bar-content-after> </template>
     <template #nav-screen-content-after> </template>

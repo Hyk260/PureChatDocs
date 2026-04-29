@@ -1,8 +1,8 @@
-<script setup>
+<script setup lang="ts">
 import { computed } from 'vue'
 import { VPDocAsideSponsors } from 'vitepress/theme'
-import { useSponsor } from '../sponsor.js'
-// import imgSrc from "../../../src/public/favicon.png"
+import { useSponsor } from '@/utils/sponsor'
+import imgSrc from "../../../src/public/favicon.png"
 
 const { data } = useSponsor()
 
@@ -24,10 +24,10 @@ const sponsors = computed(() => {
     href="https://viteconf.org/24/replay?utm=vite-sidebar"
     target="_blank"
   >
-    <!-- <img width="22" height="22" :src="imgSrc" alt="Logo" /> -->
+    <img width="22" height="22" :src="imgSrc" alt="Logo" />
     <span>
       <p class="extra-info">Building Together</p>
-      <p class="heading">ViteConf 2024</p>
+      <p class="heading">ViteConf 2026</p>
       <p class="extra-info">Watch the replay!</p>
     </span>
   </a>

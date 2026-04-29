@@ -1,5 +1,5 @@
 <script setup>
-import { integrations } from '../content'
+import { integrations } from '@/utils/content'
 import LinkGrid from './LinkGrid.vue'
 
 defineOptions({

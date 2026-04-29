@@ -1,7 +1,7 @@
 // https://vitepress.dev/zh/guide/custom-theme
 import DefaultTheme from "vitepress/theme";
 import { h, watch } from "vue";
-import { useElementPlus } from "./elementPlus";
+import { useElementPlus } from "@/utils/elementPlus";
 import { setupImageViewerHooks } from "@/hooks/useImageView";
 import Layout from "./components/Layout.vue";
 import ConfigTool from "./components/ConfigTool.vue";

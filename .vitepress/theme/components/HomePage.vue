@@ -20,7 +20,6 @@ import { teamMembers } from "@/utils/contributors";
 defineOptions({
   name: "HomePage",
 })
-
 </script>
 
 <style scoped>
