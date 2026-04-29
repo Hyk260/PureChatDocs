@@ -55,6 +55,8 @@ export function useToggleTheme() {
           duration: 300,
           easing: "ease-in",
           pseudoElement: `::view-transition-${isNewDarkMode ? "old" : "new"}(root)`,
+          // 防止动画结束后 clip-path 回弹到初始状态，导致末尾闪烁
+          fill: "forwards",
         },
       );
     },
