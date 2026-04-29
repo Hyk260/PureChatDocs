@@ -25,7 +25,7 @@ import "./style/index.css";
 import "@shikijs/vitepress-twoslash/style.css";
 import "virtual:group-icons.css";
 
-let homePageStyle = null;
+let homePageStyle: HTMLElement | null = null;
 
 export default {
   extends: DefaultTheme,
@@ -67,7 +67,7 @@ if (typeof window !== "undefined") {
   }
 }
 
-function updateHomePageStyle(value) {
+function updateHomePageStyle(value: boolean) {
   if (value) {
     if (homePageStyle) return;
     homePageStyle = document.createElement("style");
@@ -76,6 +76,6 @@ function updateHomePageStyle(value) {
   } else {
     if (!homePageStyle) return;
     homePageStyle.remove();
-    homePageStyle = undefined;
+    homePageStyle = null;
   }
 }

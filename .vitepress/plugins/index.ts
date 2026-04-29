@@ -1,4 +1,4 @@
-import UnoCSS from 'unocss/vite'
+import unocss from 'unocss/vite'
 import {
   groupIconVitePlugin,
   localIconLoader,
@@ -8,7 +8,7 @@ const ogUrl = "https://docs.purechat.cn";
 
 export function setupVitePlugins(env) {
   const plugins = [
-    UnoCSS(),
+    unocss(),
     groupIconVitePlugin({
       customIcon: {
         github: localIconLoader(import.meta.url, '../assets/icon/mdi--github.svg'),
