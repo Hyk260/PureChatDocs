@@ -13,9 +13,9 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { VPTeamMembers } from "vitepress/theme";
-import { teamMembers } from "../../contributors";
+import { teamMembers } from "@/utils/contributors";
 
 defineOptions({
   name: "HomePage",

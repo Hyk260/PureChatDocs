@@ -1,17 +1,20 @@
-// https://vitepress.dev/guide/custom-theme
+// https://vitepress.dev/zh/guide/custom-theme
 import DefaultTheme from "vitepress/theme";
 import { h, watch } from "vue";
+
 import { useElementPlus } from "./elementPlus";
-import layout from "./layout.vue";
+import Layout from "./components/Layout.vue";
 import ConfigTool from "./components/ConfigTool.vue";
 import Callout from "./components/Callout.vue";
 import Confetti from "./components/Confetti.vue";
 import DownloadLink from "./components/DownloadLink.vue";
 import DeployButton from "./components/DeployButton.vue";
 import ContentIntegrations from "./components/ContentIntegrations.vue";
-import { bindFancybox, destroyFancybox } from "./ImgViewer";
+import { bindFancybox, destroyFancybox } from "@/hooks/ImgViewer";
 
 import TwoslashFloatingVue from "@shikijs/vitepress-twoslash/client";
+
+import type { Theme } from "vitepress";
 
 // import "./style/style.css";
 import "./style/overrides.css";
@@ -22,6 +25,7 @@ import "./style/index.css";
 // 导入链接样式
 // import './style/link.scss'
 
+import "uno.css";
 import "@shikijs/vitepress-twoslash/style.css";
 import "virtual:group-icons.css";
 
@@ -30,7 +34,7 @@ let homePageStyle: HTMLElement | null = null;
 export default {
   extends: DefaultTheme,
   Layout() {
-    return h(layout);
+    return h(Layout);
   },
   enhanceApp({ app, router, siteData }) {
     if (typeof window === "undefined") return;
@@ -51,10 +55,10 @@ export default {
     watch(
       () => router.route.data.relativePath,
       () => updateHomePageStyle(location.pathname === "/"),
-      { immediate: true }
+      { immediate: true },
     );
   },
-};
+} satisfies Theme;
 
 if (typeof window !== "undefined") {
   const browser = navigator.userAgent.toLowerCase();

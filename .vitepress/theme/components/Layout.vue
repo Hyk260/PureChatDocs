@@ -1,19 +1,13 @@
-<script setup>
+<script setup lang="ts">
 import { onMounted } from "vue";
 import DefaultTheme from "vitepress/theme";
-// import HomePage from "./components/HomePage.vue";
-import DocAfter from "./components/DocAfter.vue";
-// import AsideSponsors from "./components/AsideSponsors.vue";
-// import { useImageView } from "../utils/useImageView";
-import { fetchLatestRelease } from "../utils/common";
-import { useToggleTheme } from "../utils/useToggleTheme";
+// import HomePage from "./HomePage.vue";
+import DocAfter from "./DocAfter.vue";
+// import AsideSponsors from "./AsideSponsors.vue";
+import { fetchLatestRelease } from "@/utils/common";
+import { useToggleTheme } from "@/hooks/useToggleTheme";
 
-import "uno.css";
-
-// 切换动画
 useToggleTheme();
-//  图片缩放
-// useImageView();
 
 onMounted(() => {
   fetchLatestRelease();
@@ -36,15 +30,7 @@ onMounted(() => {
   </DefaultTheme.Layout>
 </template>
 
-<style>
-/* .medium-zoom-overlay {
-  z-index: 999;
-  --at-apply: "card-df-br";
-}
-.medium-zoom-image.medium-zoom-image--opened {
-  z-index: 1000;
-} */
-
+<style scoped lang="scss">
 .fancybox__container {
   --fancybox-bg: none;
   .fancybox__toolbar {

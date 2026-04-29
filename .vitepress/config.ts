@@ -1,9 +1,10 @@
 import path from "node:path";
 import process from "node:process";
+import { fileURLToPath, URL } from "node:url"
 import { defineConfig, loadEnv } from "vitepress";
 import { groupIconMdPlugin } from "vitepress-plugin-group-icons";
 import { transformerTwoslash } from "@shikijs/vitepress-twoslash";
-import { qqSvg } from "../src/icon/qqSvg";
+import { qqSvg } from "./icon/qqSvg";
 import {
   setupVitePlugins,
   setupViteSearch,
@@ -11,8 +12,8 @@ import {
 } from "./plugins/index";
 import { Nav, Head, Sidebar } from "./plugins/define";
 
-export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, process.cwd());
+export default defineConfig((configEnv) => {
+  const env = loadEnv(configEnv.mode, process.cwd());
 
   return {
     lang: "zh-CN",
@@ -57,7 +58,7 @@ export default defineConfig(({ mode }) => {
             titleBar: { includeSnippet: true },
           });
           // 预览代码Demo插件
-          md.use(vitepressDemoPlugin); 
+          // md.use(vitepressDemoPlugin); 
         },
         codeTransformers: [transformerTwoslash()],
         theme: {
@@ -93,6 +94,11 @@ export default defineConfig(({ mode }) => {
       plugins: setupVitePlugins(env),
       server: {
         open: true,
+      },
+      resolve: {
+        alias: {
+          "@": fileURLToPath(new URL("./", import.meta.url)),
+        },
       },
     },
   };
