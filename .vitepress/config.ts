@@ -1,6 +1,6 @@
 import path from "node:path";
 import process from "node:process";
-import { fileURLToPath, URL } from "node:url"
+import { fileURLToPath, URL } from "node:url";
 import { defineConfig, loadEnv } from "vitepress";
 import { groupIconMdPlugin } from "vitepress-plugin-group-icons";
 import { transformerTwoslash } from "@shikijs/vitepress-twoslash";
@@ -58,7 +58,7 @@ export default defineConfig((configEnv) => {
             titleBar: { includeSnippet: true },
           });
           // 预览代码Demo插件
-          // md.use(vitepressDemoPlugin); 
+          // md.use(vitepressDemoPlugin);
         },
         codeTransformers: [transformerTwoslash()],
         theme: {
