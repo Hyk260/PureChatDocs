@@ -16,6 +16,8 @@ const TOGGLE_APPEARANCE_KEY = "toggle-appearance";
 const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: no-preference)";
 
 export function useToggleTheme() {
+  if (!document) return;
+
   const transitionDocument = document as ViewTransitionDocument;
 
   function canUseViewTransitions() {

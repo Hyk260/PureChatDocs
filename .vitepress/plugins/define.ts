@@ -1,4 +1,7 @@
-export const Nav = [
+import type { HeadConfig } from "vitepress";
+import type { DefaultTheme } from "vitepress/theme";
+
+export const Nav: DefaultTheme.Config["nav"] = [
   { text: "介绍", link: "/preface/" },
   { text: "常见问题", link: "/feedback/questions" },
   {
@@ -18,7 +21,7 @@ export const Nav = [
   },
 ];
 
-export const Head = [
+export const Head: HeadConfig[] = [
   ["link", { rel: "icon", href: "./favicon.ico" }],
   [
     "meta",
@@ -38,7 +41,7 @@ export const Head = [
   // ["link", { rel: "preconnect", href: "https://fonts.googleapis.com" }],
 ];
 
-export const Sidebar = [
+export const Sidebar: DefaultTheme.Config["sidebar"] = [
   {
     text: "前言",
     items: [
@@ -90,11 +93,11 @@ export const Sidebar = [
   },
 ];
 
-// if (process.env.NODE_ENV === "development") {
-//   Sidebar.push({
-//     text: "Development",
-//     items: [
-//       { text: "md", link: "/dev/md" },
-//     ],
-//   })
-// }
+if (process.env.NODE_ENV === "development") {
+  Sidebar.push({
+    text: "Development",
+    items: [
+      { text: "md", link: "/dev/md" },
+    ],
+  })
+}

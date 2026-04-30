@@ -18,6 +18,7 @@
     "@giscus/vue": "^3.1.1",
     "canvas-confetti": "^1.9.3",
     "element-plus": "^2.13.7",
+    "markdown-it-mathjax3": "^5.2.0",
     "vue": "^3.5.12"
   },
   "devDependencies": {

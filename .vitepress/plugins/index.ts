@@ -1,86 +1,65 @@
-import unocss from 'unocss/vite'
+import unocss from "unocss/vite";
 import {
   groupIconVitePlugin,
   localIconLoader,
 } from "vitepress-plugin-group-icons";
+import { groupIconMdPlugin } from "vitepress-plugin-group-icons";
+import { transformerTwoslash } from "@shikijs/vitepress-twoslash";
+
+import type { MarkdownOptions } from "vitepress";
 
 const ogUrl = "https://docs.purechat.cn";
 
 export function setupVitePlugins(env) {
+  const url = import.meta.url;
+
   const plugins = [
     unocss(),
     groupIconVitePlugin({
       customIcon: {
-        github: localIconLoader(import.meta.url, '../assets/icon/mdi--github.svg'),
-        gitee: localIconLoader(import.meta.url, '../assets/icon/simple-icons--gitee.svg'),
+        github: localIconLoader(url, "../assets/icon/mdi--github.svg"),
+        gitee: localIconLoader(url, "../assets/icon/simple-icons--gitee.svg"),
         gitlab: "vscode-icons:file-type-gitlab",
         js: "vscode-icons:file-type-js-official",
         json: "vscode-icons:file-type-json",
       },
-    })
-  ]
+    }),
+  ];
 
   return plugins;
 }
 
-export function setupViteSearch() {
+export function setupMarkdownPlugins(): MarkdownOptions {
   return {
-    provider: "local",
-    options: {
-      // appId: '',
-      // apiKey: '',
-      // indexName: '',
-      placeholder: '搜索文档',
-      translations: {
-        button: {
-          buttonText: '搜索',
-          buttonAriaLabel: '搜索'
-        },
-        modal: {
-          searchBox: {
-            resetButtonTitle: '清除查询条件',
-            resetButtonAriaLabel: '清除查询条件',
-            cancelButtonText: '取消',
-            cancelButtonAriaLabel: '取消'
-          },
-          startScreen: {
-            recentSearchesTitle: '搜索历史',
-            noRecentSearchesText: '没有搜索历史',
-            saveRecentSearchButtonTitle: '保存到搜索历史',
-            removeRecentSearchButtonTitle: '从搜索历史中移除',
-            favoriteSearchesTitle: '收藏',
-            removeFavoriteSearchButtonTitle: '从收藏中移除'
-          },
-          errorScreen: {
-            titleText: '无法获取结果',
-            helpText: '你可能需要检查你的网络连接'
-          },
-          footer: {
-            selectText: '选择',
-            navigateText: '切换',
-            closeText: '关闭',
-            searchByText: '搜索供应商'
-          },
-          noResultsScreen: {
-            noResultsText: '无法找到相关结果',
-            suggestedQueryText: '你可以尝试查询',
-            reportMissingResultsText: '你认为这个查询应该有结果？',
-            reportMissingResultsLinkText: '向我们反馈'
-          }
-        }
-      }
-    }
-  }
+    // math: true,
+    // 代码块行号显示
+    lineNumbers: true,
+    // 图片懒加载
+    image: {
+      lazyLoading: true,
+    },
+    config(md) {
+      // 代码组图标
+      md.use(groupIconMdPlugin, {
+        titleBar: { includeSnippet: true },
+      });
+      // 预览代码Demo插件
+      // md.use(vitepressDemoPlugin);
+    },
+    codeTransformers: [transformerTwoslash()],
+    theme: {
+      light: "vitesse-light",
+      dark: "vitesse-dark",
+    },
+  };
 }
 
 export function transformPageData(pageData) {
-  const canonicalUrl = `${ogUrl}/${pageData.relativePath}`
-    .replace(/\/index\.md$/, "/")
-    .replace(/\.md$/, "/");
+  const canonicalUrl = `${ogUrl}/${pageData.relativePath.replace(/(?:\/index)?\.md$/, "")}/`;
   pageData.frontmatter.head ??= [];
   pageData.frontmatter.head.unshift(
     ["link", { rel: "canonical", href: canonicalUrl }],
-    ["meta", { property: "og:title", content: pageData.title }]
+    ["meta", { property: "og:title", content: pageData.title }],
   );
   return pageData;
 }
