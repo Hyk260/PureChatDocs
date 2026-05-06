@@ -60,6 +60,8 @@ export function transformPageData(pageData) {
   pageData.frontmatter.head.unshift(
     ["link", { rel: "canonical", href: canonicalUrl }],
     ["meta", { property: "og:title", content: pageData.title }],
+    // Algolia 站点验证
+    ["meta", { name: "algolia-site-verification", content: "6B4309EB99653304" }],
   );
   return pageData;
 }
