@@ -6,7 +6,7 @@ import { setupImageViewerHooks } from "@/hooks/useImageView";
 import Layout from "./components/Layout.vue";
 import ConfigTool from "./components/ConfigTool.vue";
 import Callout from "./components/Callout.vue";
-import Confetti from "./components/Confetti.vue";
+import Confetti from "@/components/Confetti.vue";
 import DownloadLink from "./components/DownloadLink.vue";
 import DeployButton from "./components/DeployButton.vue";
 import ContentIntegrations from "./components/ContentIntegrations.vue";

@@ -6,8 +6,10 @@ import { useToggleTheme } from "@/hooks/useToggleTheme";
 
 import HomePage from "./HomePage.vue";
 import DocAfter from "./DocAfter.vue";
-import NotFound from "./NotFound.vue";
+import NotFound from "@/components/NotFound/index.vue";
 import AsideSponsors from "./AsideSponsors.vue";
+
+const isDev = import.meta.env.DEV;
 
 const isAsideAdsBefore = ref(false);
 
@@ -21,7 +23,7 @@ onMounted(() => {
 <template>
   <DefaultTheme.Layout>
     <template #aside-ads-before>
-      <AsideSponsors v-if="isAsideAdsBefore" />
+      <AsideSponsors v-if="isAsideAdsBefore || isDev" />
     </template>
     <template #home-features-after>
       <HomePage />
@@ -30,7 +32,7 @@ onMounted(() => {
       <DocAfter />
     </template>
     <template #not-found>
-      <!-- <NotFound /> -->
+      <NotFound />
     </template>
     <template #nav-bar-content-after> </template>
     <template #nav-screen-content-after> </template>

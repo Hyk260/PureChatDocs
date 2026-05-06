@@ -22,7 +22,7 @@ export const Nav: DefaultTheme.Config["nav"] = [
 ];
 
 export const Head: HeadConfig[] = [
-  ["link", { rel: "icon", href: "./favicon.ico" }],
+  ["link", { rel: "icon", href: "/favicon.ico" }],
   [
     "meta",
     {
