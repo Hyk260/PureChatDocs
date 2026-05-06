@@ -6,9 +6,7 @@ export const Nav: DefaultTheme.Config["nav"] = [
   { text: "常见问题", link: "/feedback/questions" },
   {
     text: "v1.0.1",
-    items: [
-      { text: "更新日志", link: "/other/logs" }
-    ]
+    items: [{ text: "更新日志", link: "/other/logs" }],
   },
   {
     text: "链接",
@@ -34,11 +32,29 @@ export const Head: HeadConfig[] = [
     "meta",
     {
       name: "viewport",
-      content: "width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no",
+      content:
+        "width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no",
     },
   ],
   ["meta", { name: "author", content: "yongkang" }],
+  [
+    "meta",
+    {
+      name: "algolia-site-verification",
+      content: "6B4309EB99653304",
+    },
+  ],
   // ["link", { rel: "preconnect", href: "https://fonts.googleapis.com" }],
+  // 注册 Service Worker
+  // [
+  //   "script",
+  //   { id: "register-sw" },
+  //   `;(() => {
+  //       if ('serviceWorker' in navigator) {
+  //         navigator.serviceWorker.register('/sw.js')
+  //       }
+  //     })()`,
+  // ],
 ];
 
 export const Sidebar: DefaultTheme.Config["sidebar"] = [
@@ -70,8 +86,9 @@ export const Sidebar: DefaultTheme.Config["sidebar"] = [
     items: [
       { text: "常见问题", link: "/feedback/questions" },
       {
-        text: "知识科普", link: "/feedback/knowledge"
-      }
+        text: "知识科普",
+        link: "/feedback/knowledge",
+      },
     ],
   },
   {
@@ -86,18 +103,14 @@ export const Sidebar: DefaultTheme.Config["sidebar"] = [
     ],
   },
   {
-     text: "第三方服务商接入指南",
-      items: [
-      { text: "接入胜算云API", link: "/provider/shengsuanyun" },
-    ],
+    text: "第三方服务商接入指南",
+    items: [{ text: "接入胜算云API", link: "/provider/shengsuanyun" }],
   },
 ];
 
 if (process.env.NODE_ENV === "development") {
   Sidebar.push({
     text: "Development",
-    items: [
-      { text: "md", link: "/dev/md" },
-    ],
-  })
+    items: [{ text: "md", link: "/dev/md" }],
+  });
 }
