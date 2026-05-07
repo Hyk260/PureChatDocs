@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { VPDocAsideSponsors } from 'vitepress/theme'
 import { useSponsor } from '@/utils/sponsor'
-import imgSrc from "../../../src/public/favicon.png"
+import imgSrc from "@/assets/favicon.png"
 
 const { data } = useSponsor()
 

@@ -6,6 +6,7 @@ import { useToggleTheme } from "@/hooks/useToggleTheme";
 
 import HomePage from "./HomePage.vue";
 import DocAfter from "./DocAfter.vue";
+import DocBefore from "./DocBefore.vue";
 import NotFound from "@/components/NotFound/index.vue";
 import AsideSponsors from "./AsideSponsors.vue";
 
@@ -27,6 +28,9 @@ onMounted(() => {
     </template>
     <template #home-features-after>
       <HomePage />
+    </template>
+    <template #doc-before>
+      <DocBefore />
     </template>
     <template #doc-after>
       <DocAfter />

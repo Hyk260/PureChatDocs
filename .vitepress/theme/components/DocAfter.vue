@@ -3,9 +3,10 @@ import { ref, watch } from "vue";
 import { useRoute, useData } from "vitepress";
 import Giscus from "@giscus/vue";
 
+const giscusKey = ref(true);
+
 const route = useRoute();
 const { isDark } = useData();
-const giscusKey = ref(true);
 
 watch(route, () => {
   giscusKey.value = !giscusKey.value
@@ -15,7 +16,7 @@ watch(route, () => {
 </script>
 
 <template>
-  <div class="mt-8">
+  <div class="doc-after mt-6">
     <Giscus
       :key="giscusKey"
       host="https://giscus.app"
