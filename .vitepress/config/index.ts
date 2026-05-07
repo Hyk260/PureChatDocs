@@ -33,6 +33,13 @@ export default defineConfig({
   // assetsDir: path.join(process.cwd(), "public"),
   vite: {
     plugins: setupVitePlugins(env),
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern'
+        }
+      }
+    },
     server: {
       open: true,
     },
@@ -40,6 +47,11 @@ export default defineConfig({
       alias: {
         "@": fileURLToPath(new URL("../../.vitepress", import.meta.url)),
       },
+    },
+    define: {
+      "import.meta.env.VITE_BASE_URL": JSON.stringify(env.VITE_BASE_URL),
+      "import.meta.env.VITE_ALGOLIA_APPID": JSON.stringify(env.VITE_ALGOLIA_APPID),
+      "import.meta.env.VITE_ALGOLIA_APIKEY": JSON.stringify(env.VITE_ALGOLIA_APIKEY),
     },
   },
 });

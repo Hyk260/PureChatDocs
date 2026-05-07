@@ -1,5 +1,8 @@
 import { nextTick } from "vue";
+import { inBrowser } from "vitepress";
+
 import type { Theme } from "vitepress";
+
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
 const EXCLUDE_ALTS = new Set(["Deploy to Vercel"]);
@@ -125,6 +128,7 @@ export const destroyFancybox = async () => {
 export const setupImageViewerHooks = (
   router: Parameters<NonNullable<Theme["enhanceApp"]>>[0]["router"],
 ) => {
+  if (!inBrowser) return;
   router.onBeforeRouteChange = () => {
     destroyFancybox();
   };

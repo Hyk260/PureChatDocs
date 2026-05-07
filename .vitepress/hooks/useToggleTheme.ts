@@ -1,4 +1,4 @@
-import { useData } from "vitepress";
+import { useData, inBrowser } from "vitepress";
 import { nextTick, provide } from "vue";
 
 type ToggleAppearancePayload = {
@@ -16,7 +16,7 @@ const TOGGLE_APPEARANCE_KEY = "toggle-appearance";
 const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: no-preference)";
 
 export function useToggleTheme() {
-  if (typeof window === "undefined") return;
+  if (!inBrowser) return;
 
   const transitionDocument = document as ViewTransitionDocument;
 

@@ -43,6 +43,14 @@ export function setupMarkdownPlugins(): MarkdownOptions {
       md.use(groupIconMdPlugin, {
         titleBar: { includeSnippet: true },
       });
+      // 组件插入h1标题下
+      md.use((md) => {
+        md.renderer.rules.heading_close = (tokens, idx, options, env, slf) => {
+          let htmlResult = slf.renderToken(tokens, idx, options)
+          if (tokens?.[idx]?.tag === 'h1') htmlResult += `<doc-title-meta />`
+          return htmlResult
+        }
+      })
       // 预览代码Demo插件
       // md.use(vitepressDemoPlugin);
     },

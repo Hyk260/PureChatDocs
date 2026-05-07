@@ -3,6 +3,8 @@ import { qqSvg } from "../icon/qqSvg";
 
 import type { DefaultTheme } from "vitepress/theme";
 
+const { VITE_ALGOLIA_APPID, VITE_ALGOLIA_APIKEY } = import.meta.env || {};
+
 export const localSearchOptions: DefaultTheme.LocalSearchOptions = {
   translations: {
     button: {
@@ -20,8 +22,8 @@ export const localSearchOptions: DefaultTheme.LocalSearchOptions = {
 };
 
 export const algoliaSearchOptions: DefaultTheme.AlgoliaSearchOptions = {
-  appId: "",
-  apiKey: "",
+  appId: VITE_ALGOLIA_APPID || "",
+  apiKey: VITE_ALGOLIA_APIKEY || "",
   indexName: "pure-chat-docs",
   placeholder: "搜索文档",
   translations: {
@@ -78,6 +80,13 @@ export function setupViteSearch(
   } as DefaultTheme.Config["search"];
 }
 
+export const footer = {
+  message:
+    'Released under the <a href="https://github.com/vuejs/vitepress/blob/main/LICENSE">MIT License</a>.',
+  copyright:
+    'Copyright © 2023-present  <a href="https://github.com/yyx990803">yongkang</a>',
+};
+
 export const ThemeConfig: DefaultTheme.Config = {
   editLink: {
     pattern: "https://github.com/Hyk260/PureChatDocs/edit/main/src/:path",
@@ -107,10 +116,7 @@ export const ThemeConfig: DefaultTheme.Config = {
   nav: Nav,
   sidebar: Sidebar,
   // https://vitepress.dev/zh/reference/default-theme-footer#footer
-  footer: {
-    message: "Released under the MIT License.",
-    copyright: "Copyright (c) 2023 yongkang",
-  },
+  footer: footer,
   // 搜索
   search: setupViteSearch(),
 };

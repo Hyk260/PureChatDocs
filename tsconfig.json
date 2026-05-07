@@ -28,7 +28,7 @@
     "paths": {
       "@/*": ["./.vitepress/*"],
     },
-    "types": ["vite/client", "node", "element-plus/global"]
+    "types": ["vitepress/client", "node", "element-plus/global"]
   },
   "include": [
     ".vitepress/**/*",

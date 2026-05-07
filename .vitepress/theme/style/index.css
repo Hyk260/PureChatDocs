@@ -46,7 +46,7 @@
 
 :root {
   --font-family: "Alimama";
-  font-family: var(--font-family); 
+  font-family: var(--font-family);
 }
 
 html,
