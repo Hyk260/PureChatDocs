@@ -1,65 +1,66 @@
-# 构建 VitePress 站点并将其部署到 GitHub Pages 的示例工作流程
-name: Deploy VitePress site to Pages
+# 构建 VitePress 文档站点并部署到 GitHub Pages
+name: 部署 VitePress 站点到 GitHub Pages
 
 on:
-  # 在针对 `main` 分支的推送上运行
+  # 推送到 main 分支时自动触发
   push:
     branches: [main]
-
-  # 允许你从 Actions 选项卡手动运行此工作流程
+  # 允许在 Actions 页面手动触发（workflow_dispatch）
   workflow_dispatch:
 
-# 设置 GITHUB_TOKEN 的权限，以允许部署到 GitHub Pages
+# 为 GITHUB_TOKEN 授予部署 GitHub Pages 所需权限
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: read # 读取仓库内容（检出代码）
+  pages: write # 写入 GitHub Pages 部署
+  id-token: write # OIDC，供 Pages 安全部署使用
 
-# 只允许同时进行一次部署，跳过正在运行和最新队列之间的运行队列 但是，不要取消正在进行的运行，因为我们希望允许这些生产部署完成
+# 同一并发组内串行：避免多实例同时写 Pages；不打断正在进行的部署
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: pages # 并发组标识
+  cancel-in-progress: false # false = 排队等待，不取消已在跑的作业
 
 jobs:
-  # 构建工作
   build:
-    runs-on: ubuntu-latest
+    name: 构建站点
+    runs-on: ubuntu-latest # 在 Ubuntu 最新稳定镜像上运行
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: 检出代码
+        uses: actions/checkout@v4 # 拉取仓库；需配合下方 fetch-depth
         with:
-          fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
-      - uses: pnpm/action-setup@v3 # 如果使用 pnpm，请取消此区域注释
+          fetch-depth: 0 # 0 = 完整 Git 历史（lastUpdated 等需提交信息时保留）
+
+      - uses: pnpm/action-setup@v3 # 安装指定版本的 pnpm
         with:
-          version: 9
-      # - uses: oven-sh/setup-bun@v1 # 如果使用 Bun，请取消注释
-      - name: Setup Node
+          version: 9 # pnpm 主版本号
+
+      - name: 配置 Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: pnpm # npm / pnpm / yarn
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-      - name: Install dependencies
-      # npm ci / pnpm install / yarn install / bun install
-        run: pnpm install
-      - name: Build with VitePress
-      # npm run build / pnpm build / yarn build / bun run build
-        run: pnpm run github:pages:build
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: docs
+          node-version: 20 # Node 运行时版本
+          cache: pnpm # 缓存依赖目录，加速后续安装
 
-  # 部署工作
+      - name: 配置 GitHub Pages
+        uses: actions/configure-pages@v4 # 读取 Pages 相关环境变量
+
+      - name: 安装依赖
+        run: pnpm install # 根据 lockfile 安装依赖
+
+      - name: 构建 VitePress
+        run: pnpm run github:pages:build # 生成静态站点
+
+      - name: 上传构建产物
+        uses: actions/upload-pages-artifact@v3 # 打包为 Pages 可部署的 artifact
+        with:
+          path: docs # 静态文件根目录（需与 VitePress 输出目录一致）
+
   deploy:
+    name: 发布到 GitHub Pages
     environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
+      name: github-pages # 关联仓库的 GitHub Pages 环境
+      url: ${{ steps.deployment.outputs.page_url }} # 部署完成后站点 URL
+    needs: build # 必须先成功完成 build 作业
     runs-on: ubuntu-latest
-    name: Deploy
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: 部署到 GitHub Pages
+        id: deployment # 供 environment.url 引用 page_url
+        uses: actions/deploy-pages@v4 # 将 artifact 发布到 Pages
