@@ -13,6 +13,8 @@ import {
   ElRadio,
   ElRadioButton,
   ElRadioGroup,
+  ElSelect,
+  ElOption,
 } from "element-plus";
 
 const components = [
@@ -27,6 +29,8 @@ const components = [
   ElRadio,
   ElRadioButton,
   ElText,
+  ElSelect,
+  ElOption,
 ];
 
 export function useElementPlus(app) {

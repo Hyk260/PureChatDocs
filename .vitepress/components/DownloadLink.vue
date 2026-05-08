@@ -1,10 +1,15 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { localStg } from "../../utils/storage";
+import { localStg } from "@/utils/storage";
+
+import type { GitHubRelease } from "@/utils/common";
 
 defineOptions({
-  name: "DownloadLink"
+  name: "DownloadLink",
 });
+
+// <DownloadLink type="setup.exe" />
+// <DownloadLink platform="Mac" type="arm64.dmg" />
 
 const props = defineProps({
   type: {
@@ -14,7 +19,7 @@ const props = defineProps({
   platform: {
     type: String,
     default: "Window",
-    validator: (value: string) => ["MacOS", "Window"].includes(value),
+    // validator: (value: string) => ["MacOS", "Window"].includes(value || ""),
   },
   version: {
     type: String,
@@ -24,33 +29,25 @@ const props = defineProps({
     type: String,
     default: "gitcode",
     validator: (value: string) => ["github", "gitcode"].includes(value),
-  }
+  },
 });
 
-const latestRelease = localStg.get("latestRelease");
+const latestRelease = localStg.get("githubLatestRelease") as GitHubRelease | null;
 const downloadSources = {
   github: "https://github.com/Hyk260/PureChat/releases",
-  gitcode: "https://gitcode.com/Hyk260/PureChat/releases"
+  gitcode: "https://gitcode.com/Hyk260/PureChat/releases",
 };
 
-// <DownloadLink type="setup.exe" />
-// <DownloadLink platform="Mac" type="arm64.dmg" />
-
-/**
- * 移除版本号前的'v'前缀
- * @param version 版本号字符串
- * @returns 处理后的版本号
- */
-const removeVPrefix = (version: string | null | undefined): string => {
+const removeVPrefix = (version?: string): string => {
   return version?.replace(/^v/, "") ?? "";
 };
 
-const currentVersion = computed(
-  () => removeVPrefix(latestRelease?.tag_name) || props.version
-);
+const currentVersion = computed(() => {
+  return removeVPrefix(latestRelease?.tag_name) || props.version;
+});
 
 const downloadUrl = computed(() => {
-  const baseUrl = downloadSources[props.source as keyof typeof downloadSources];
+  const baseUrl = downloadSources[props.source];
   return `${baseUrl}/download/v${currentVersion.value}/PureChat-${currentVersion.value}-${props.type}`;
 });
 </script>
@@ -67,12 +64,12 @@ const downloadUrl = computed(() => {
 </template>
 
 <style scoped>
-.download-link {
-  /* text-decoration: none; */
-  /* color: inherit; */
-  /* transition: color 0.2s ease; */
+/* .download-link {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
 }
 .download-link:hover {
-  /* color: var(--primary-color); */
-}
+  color: var(--primary-color);
+} */
 </style>

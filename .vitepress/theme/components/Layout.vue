@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import DefaultTheme from "vitepress/theme";
-import { fetchLatestRelease } from "@/utils/common";
+import { fetchGitHubLatestRelease } from "@/utils/common";
 import { useToggleTheme } from "@/hooks/useToggleTheme";
 
 import HomePage from "./HomePage.vue";
@@ -18,7 +18,7 @@ const isAsideAdsBefore = ref(false);
 useToggleTheme();
 
 onMounted(() => {
-  fetchLatestRelease();
+  fetchGitHubLatestRelease();
   if (isDev) console.log("env:", import.meta.env);
 });
 </script>

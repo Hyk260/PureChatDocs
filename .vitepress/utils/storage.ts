@@ -1,40 +1,52 @@
-export function createStorage(type, storagePrefix = "") {
-  if (typeof window === "undefined") return;
-  
-  const stg = type === 'session' ? window?.sessionStorage : window?.localStorage;
+export type StorageType = "local" | "session"
+
+export function createStorage<T extends object>(type: StorageType, storagePrefix: string = "") {
+  const stg = type === "session" ? window.sessionStorage : window.localStorage
 
   const storage = {
-    set(key, value) {
-      const json = JSON.stringify(value);
+    /**
+     * Set session
+     *
+     * @param key Session key
+     * @param value Session value
+     */
+    set<K extends keyof T>(key: K, value: T[K]) {
+      const json = JSON.stringify(value)
 
-      stg.setItem(`${storagePrefix}${key}`, json);
+      stg.setItem(`${storagePrefix}${key as string}`, json)
     },
-    get(key) {
-      const json = stg.getItem(`${storagePrefix}${key}`);
+    /**
+     * Get session
+     *
+     * @param key Session key
+     */
+    get<K extends keyof T>(key: K): T[K] | null {
+      const json = stg.getItem(`${storagePrefix}${key as string}`)
       if (json) {
-        let storageData = null;
+        let storageData: T[K] | null = null
 
         try {
-          storageData = JSON.parse(json);
-        } catch { }
+          storageData = JSON.parse(json)
+        } catch {}
 
         if (storageData) {
-          return storageData;
+          return storageData as T[K]
         }
       }
 
-      stg.removeItem(`${storagePrefix}${key}`);
+      stg.removeItem(`${storagePrefix}${key as string}`)
 
-      return null;
+      return null
     },
-    remove(key) {
-      stg.removeItem(`${storagePrefix}${key}`);
+    remove(key: keyof T) {
+      stg.removeItem(`${storagePrefix}${key as string}`)
     },
     clear() {
-      stg.clear();
-    }
-  };
-  return storage;
+      stg.clear()
+    },
+  }
+
+  return storage
 }
 
-export const localStg = createStorage('local');
+export const localStg = createStorage<Record<string, any>>('local');

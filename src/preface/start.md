@@ -42,13 +42,13 @@ git clone https://gitee.com/H260788/PureChat.git
 pnpm install
 ```
 
-```bash [yarn]
+<!-- ```bash [yarn]
 yarn install
 ```
 
 ```bash [npm]
 npm install 
-```
+``` -->
 
 :::
 
@@ -118,9 +118,3 @@ pnpm run app:build:mac
 - [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) - 代码格式化插件
 - [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) - Vue 服务插件
 - [Vue VSCode Snippets](https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets) - Vue2、Vue3 写法提示插件
-
-## SVG 图标使用
-
-将 svg 图标文件放在 `src/icons/svg` 目录下
-
-在项目中直接使用 `<SvgIcon local-icon="图标文件命名" />` 即可

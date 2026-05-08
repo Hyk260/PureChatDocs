@@ -11,7 +11,7 @@ import ConfigTool from "./components/ConfigTool.vue";
 import Callout from "./components/Callout.vue";
 import Confetti from "@/components/Confetti.vue";
 import DocTitleMeta from "@/components/DocTitleMeta.vue";
-import DownloadLink from "./components/DownloadLink.vue";
+import DownloadLink from "@/components/DownloadLink.vue";
 import DeployButton from "./components/DeployButton.vue";
 import ContentIntegrations from "./components/ContentIntegrations.vue";
 

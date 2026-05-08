@@ -1,10 +1,17 @@
 # 客户端下载
 
+<script setup>
+import DownloadSelect from '@/components/DownloadSelect.vue'
+</script>
+
 ## Windows 版本
 
 <Callout type='warning'>
   PureChat不支持Windows7系统
 </Callout>
+
+<!-- ### 选择版本号 -->
+<!-- <DownloadSelect /> -->
 
 ### 安装版（Setup）
 <DownloadLink type="x64-setup.exe" />
