@@ -32,7 +32,7 @@ onMounted(() => {
       <HomePage />
     </template>
     <template #layout-bottom>
-      <!-- <Footer /> -->
+      <Footer />
     </template>
     <template #doc-before>
       <!-- <DocBefore /> -->

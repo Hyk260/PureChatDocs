@@ -69,7 +69,7 @@ export const algoliaSearchOptions: DefaultTheme.AlgoliaSearchOptions = {
 const searchOptionsMap = {
   local: localSearchOptions,
   algolia: algoliaSearchOptions,
-} as const;
+};
 
 export function setupViteSearch(
   type: "local" | "algolia" = "local",
@@ -82,9 +82,9 @@ export function setupViteSearch(
 
 export const footer = {
   message:
-    'Released under the <a href="https://github.com/vuejs/vitepress/blob/main/LICENSE">MIT License</a>.',
+    'Released under the <a href="https://github.com/Hyk260/PureChatDocs/blob/main/LICENSE">MIT License</a>.',
   copyright:
-    'Copyright © 2023-present  <a href="https://github.com/yyx990803">yongkang</a>',
+    'Copyright © 2024-present  <a href="https://github.com/Hyk260">Hyk260</a>',
 };
 
 export const ThemeConfig: DefaultTheme.Config = {
@@ -116,7 +116,7 @@ export const ThemeConfig: DefaultTheme.Config = {
   nav: Nav,
   sidebar: Sidebar,
   // https://vitepress.dev/zh/reference/default-theme-footer#footer
-  footer: footer,
+  // footer: footer,
   // 搜索
   search: setupViteSearch(),
 };

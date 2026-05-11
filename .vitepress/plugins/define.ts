@@ -106,6 +106,10 @@ export const Sidebar: DefaultTheme.Config["sidebar"] = [
     text: "第三方服务商接入指南",
     items: [{ text: "接入胜算云API", link: "/provider/shengsuanyun" }],
   },
+  {
+    text: "github",
+    items: [{ text: "home", link: "/github/home" }],
+  }
 ];
 
 if (process.env.NODE_ENV === "development") {

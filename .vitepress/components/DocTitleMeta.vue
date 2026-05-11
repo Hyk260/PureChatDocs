@@ -35,7 +35,7 @@ const { frontmatter, page } = useData();
 const isDev = import.meta.env.DEV;
 
 const dateFormatter = formatDate();
-const format = (date?: string | number | Date) => {
+const format = (date?: string | number | Date): string => {
   if (!date) return "";
   return dateFormatter.format(new Date(date)).replace(/\//g, "-");
 };
@@ -46,25 +46,34 @@ const lastUpdated = computed(() =>
 );
 
 const wordCount = ref("");
-const updateWordCount = () => {
-  const docDomContainer = document.querySelector("#VPContent");
-  const content =
-    docDomContainer?.querySelector(".content-container .main")?.textContent ||
-    "";
-  wordCount.value = countTransK(countWord(content));
-};
-
 const pv = ref("♾️");
+
 let observer: MutationObserver | null = null;
 
-const initPVObserver = () => {
+const getContentText = (): string => {
+  const docDomContainer = document.querySelector("#VPContent");
+  return docDomContainer?.querySelector(".content-container .main")?.textContent || "";
+};
+
+const updateWordCount = (): void => {
+  wordCount.value = countTransK(countWord(getContentText()));
+};
+
+const initPVObserver = (): void => {
   const pvEl = document.getElementById("vercount_value_page_pv");
   if (!pvEl) return;
 
-  if (pvEl.textContent && pvEl.textContent.trim()) {
-    const val = parseInt(pvEl.textContent.trim());
+  const parseAndUpdatePV = (text: string): boolean => {
+    const val = parseInt(text, 10);
     if (!isNaN(val)) {
       pv.value = countTransK(val);
+      return true;
+    }
+    return false;
+  };
+
+  if (pvEl.textContent?.trim()) {
+    if (parseAndUpdatePV(pvEl.textContent.trim())) {
       return;
     }
   }
@@ -73,12 +82,9 @@ const initPVObserver = () => {
     for (const mutation of mutations) {
       if (mutation.type === "childList" || mutation.type === "characterData") {
         const text = pvEl.textContent?.trim();
-        if (text) {
-          const val = parseInt(text);
-          if (!isNaN(val)) {
-            pv.value = countTransK(val);
-            observer?.disconnect();
-          }
+        if (text && parseAndUpdatePV(text)) {
+          observer?.disconnect();
+          break;
         }
       }
     }
@@ -91,26 +97,31 @@ const initPVObserver = () => {
   });
 };
 
-onMounted(() => {
+const handleMounted = (): void => {
   nextTick(() => {
     updateWordCount();
     initPVObserver();
   });
-});
+};
 
-onUnmounted(() => {
+const handleUnmounted = (): void => {
   observer?.disconnect();
-});
+  observer = null;
+};
 
+const handlePageChange = (): void => {
+  nextTick(() => {
+    updateWordCount();
+    pv.value = "...";
+    observer?.disconnect();
+    initPVObserver();
+  });
+};
+
+onMounted(handleMounted);
+onUnmounted(handleUnmounted);
 watch(
   () => page.value.relativePath,
-  () => {
-    nextTick(() => {
-      updateWordCount();
-      pv.value = "...";
-      observer?.disconnect();
-      initPVObserver();
-    });
-  },
+  handlePageChange,
 );
 </script>
