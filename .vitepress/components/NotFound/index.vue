@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from "vue";
 import { useRoute, useRouter, useData } from "vitepress";
-import { Home, Search, Compass, RefreshCw } from "lucide-vue-next";
+import { Home, Search, Compass, RefreshCw } from "@lucide/vue";
 import FloatingParticles from "./FloatingParticles.vue";
 import GlitchText from "./GlitchText.vue";
 import "@/styles/not-found.css";

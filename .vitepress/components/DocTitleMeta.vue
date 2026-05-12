@@ -1,22 +1,22 @@
 <template>
   <div
     v-show="isDev"
-    class="text-text2 flex flex-wrap items-center gap-2 pt-4 pb-4 text-sm leading-relaxed font-medium break-keep md:gap-4"
+    class="text-text2 flex-sc flex-wrap gap-2 pt-4 pb-4 text-sm leading-relaxed font-medium break-keep md:gap-4"
   >
-    <div v-if="firstCommit" class="flex items-center" title="发表于">
-      <i class="icon icon-created bg-text2 mr-1" />
+    <div v-if="firstCommit" class="flex-c gap-1" title="发表于">
+      <CalendarDays :size="16" />
       <span>发表于 {{ firstCommit }}</span>
     </div>
-    <div class="flex items-center" title="更新于">
-      <i class="icon icon-updated bg-text2 mr-1" />
+    <div class="flex-c gap-1" title="更新于">
+      <Clock3 :size="16" />
       <span>更新于 {{ lastUpdated }}</span>
     </div>
-    <div class="flex items-center" title="字数">
-      <i class="icon icon-word bg-text2 mr-1" />
+    <div class="flex-c gap-1" title="字数">
+      <BookOpenText :size="16" />
       <span>总字数 {{ wordCount }}</span>
     </div>
-    <div class="flex items-center" title="阅读量">
-      <i class="icon icon-user bg-text2 mr-1" />
+    <div class="flex-c gap-1" title="阅读量">
+      <Layers :size="16" />
       <span>
         <span>阅读量 {{ pv }}</span>
         <span id="vercount_value_page_pv" class="hidden" />
@@ -28,6 +28,7 @@
 <script setup lang="ts">
 import { useData } from "vitepress";
 import { ref, onMounted, computed, onUnmounted, nextTick, watch } from "vue";
+import { CalendarDays, Clock3, BookOpenText, Layers } from "@lucide/vue";
 import { countWord, countTransK, formatDate } from "@/utils/tools";
 
 const { frontmatter, page } = useData();
@@ -52,7 +53,10 @@ let observer: MutationObserver | null = null;
 
 const getContentText = (): string => {
   const docDomContainer = document.querySelector("#VPContent");
-  return docDomContainer?.querySelector(".content-container .main")?.textContent || "";
+  return (
+    docDomContainer?.querySelector(".content-container .main")?.textContent ||
+    ""
+  );
 };
 
 const updateWordCount = (): void => {
@@ -120,8 +124,5 @@ const handlePageChange = (): void => {
 
 onMounted(handleMounted);
 onUnmounted(handleUnmounted);
-watch(
-  () => page.value.relativePath,
-  handlePageChange,
-);
+watch(() => page.value.relativePath, handlePageChange);
 </script>

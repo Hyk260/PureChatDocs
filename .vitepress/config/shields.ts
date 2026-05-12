@@ -128,11 +128,6 @@ export const badges: Badge[] = [
     logo: "nextdotjs",
     logoColor: "fff",
   },
-  // [![Stars](https://img.shields.io/github/stars/Hyk260/PureChat.svg)](https://github.com/Hyk260/PureChat/stargazers)
-  // [![Forks](https://img.shields.io/github/forks/Hyk260/PureChat.svg)](https://github.com/Hyk260/PureChat/network/members)
-  // https://simpleicons.org
-  // https://shields.io/badges
-  // [deepwiki-shield]: https://img.shields.io/badge/Deepwiki-PureChat-0088CC?style=flat&labelColor=555&logo=deepwiki&logoColor=fff
 ];
 
 export const endpoint: Badge[] = [
@@ -155,6 +150,12 @@ export const endpoint: Badge[] = [
     link: "https://github.com/Hyk260/PureChat/network/members",
   },
 ];
+
+// [![Stars](https://img.shields.io/github/stars/Hyk260/PureChat.svg)](https://github.com/Hyk260/PureChat/stargazers)
+// [![Forks](https://img.shields.io/github/forks/Hyk260/PureChat.svg)](https://github.com/Hyk260/PureChat/network/members)
+// https://simpleicons.org
+// https://shields.io/badges
+// [deepwiki-shield]: https://img.shields.io/badge/Deepwiki-PureChat-0088CC?style=flat&labelColor=555&logo=deepwiki&logoColor=fff
 
 export function generateBadgeUrl(badge: Badge): string {
   const { label, message, color, labelColor = "555", logo, logoColor } = badge;

@@ -1,7 +1,7 @@
 {
   "name": "pure-chat-docs",
   "type": "module",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "The documentation of PureChat",
   "scripts": {
     "dev": "vitepress",
@@ -16,10 +16,10 @@
     "@element-plus/icons-vue": "^2.3.2",
     "@fancyapps/ui": "^6.0.34",
     "@giscus/vue": "^3.1.1",
+    "@lucide/vue": "^1.14.0",
     "canvas-confetti": "^1.9.3",
     "element-plus": "^2.13.7",
-    "lucide-vue-next": "^1.0.0",
-    "markdown-it-mathjax3": "^5.2.0",
+    "markdown-it-mathjax3": "^4.0.0",
     "vue": "^3.5.12"
   },
   "devDependencies": {
