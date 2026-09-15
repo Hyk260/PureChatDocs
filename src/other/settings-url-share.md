@@ -23,8 +23,8 @@ PureChat 支持从外部 URL 导入设置参数，以便于快速设置 PureChat
 使用以下 URL 格式，可以从外部 URL 导入设置参数：
 
 ```plaintext
-https://purechat.cn/chat?settings=<JSON格式的设置对象>
-https://purechat.cn/chat?settings={"keyVaults":{"openai":{"apiKey":"user-key","baseURL":"https://your-proxy.com/v1"}}}
+https://im.purechat.cn/chat?settings=<JSON格式的设置对象>
+https://im.purechat.cn/chat?settings={"keyVaults":{"openai":{"apiKey":"user-key","baseURL":"https://your-proxy.com/v1"}}}
 ```
 
 ## 将设置导出到 URL

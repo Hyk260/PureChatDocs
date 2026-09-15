@@ -11,7 +11,7 @@ export const Nav: DefaultTheme.Config["nav"] = [
   {
     text: "链接",
     items: [
-      { text: "在线预览", link: "https://purechat.cn" },
+      { text: "在线预览", link: "https://im.purechat.cn" },
       { text: "Electron", link: "https://github.com/Hyk260/PureChat/releases" },
       { text: "gitee仓库", link: "https://gitee.com/H260788/PureChat" },
       { text: "github仓库", link: "https://github.com/Hyk260/PureChat" },
@@ -115,6 +115,9 @@ export const Sidebar: DefaultTheme.Config["sidebar"] = [
 if (process.env.NODE_ENV === "development") {
   Sidebar.push({
     text: "Development",
-    items: [{ text: "md", link: "/dev/md" }],
+    items: [
+      { text: "md", link: "/dev/md" },
+      { text: "git", link: "/dev/git" },
+    ],
   });
 }

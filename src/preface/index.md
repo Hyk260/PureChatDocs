@@ -1,7 +1,7 @@
 # 介绍
 
 PureChat 将传统的即时消息与 AI 驱动的对话结合在一个统一的界面中。它既可以作为功能性聊天应用程序，也可以作为 AI 开发的框架。
-- 体验链接：[cloud 腾讯云im sdk即使通讯模式](https://purechat.cn)
+- 体验链接：[cloud 腾讯云im sdk即使通讯模式](https://im.purechat.cn)
 - 体验链接：[local 本地模式](https://local.purechat.cn)
 
 关注社交账号 获取最新动态: [公众号](http://mmbiz.qpic.cn/sz_mmbiz_jpg/jfyEomMz9MYlSVaNrB0yfPKcGm2OmPfCZiaHR9r1Zo0YzSro1T8MonB6OpkcGiamhHD5Sv0LPLYWS2HdaeUamDqQ/0)

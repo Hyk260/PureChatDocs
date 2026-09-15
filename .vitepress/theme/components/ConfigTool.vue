@@ -148,7 +148,7 @@ const generatedLink = computed(() => {
   
   const prefix = form.value.mode === 'app' 
     ? 'purechat://chat?' 
-    : 'https://purechat.cn/chat?'
+    : 'https://im.purechat.cn/chat?'
   
   return `${prefix}settings=${encodeURIComponent(JSON.stringify(settings))}`
 })
